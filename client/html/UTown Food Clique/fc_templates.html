@@ -1,0 +1,132 @@
+<template name="fccommentItem">
+{{body}}
+</template>
+<template name="fccommentSubmit">
+<form name="comment" >
+	<input name="body" id="body" required>
+	<input type="submit" value="Add comment">
+</form>
+<a href="{{pathFor route='fcList'}}"><button type="button" class="btn">Back</button></a>
+</template>
+<template name="fcItem">
+<hr class="major" />
+<h2>{{postTitle}}</h2>
+<p>{{post}}</p>
+{{#if currentUser}}
+<a class="btn" href="{{pathFor 'fcPage'}}">{{commentsCount}} comments</a> {{formatDate submitted}}
+<a class="btn pull-right btn-small no" ><i class="fa fa-chevron-down"></i></a>
+<a class="btn pull-right"> {{score}} </a>
+<a class="btn pull-right btn-small yes"><i class="fa fa-chevron-up"></i></a>
+{{else}}
+<a class="btn" href="{{pathFor 'fcPage'}}">{{commentsCount}} comments</a> {{formatDate submitted}}
+<a class="btn pull-right btn-small" href="{{pathFor 'accounts'}}"><i class="fa fa-chevron-down"></i></a>
+<a class="btn pull-right"> {{score}} </a>
+<a class="btn pull-right btn-small" href="{{pathFor 'accounts'}}"><i class="fa fa-chevron-up"></i></a>
+{{/if}}
+</template>
+<template name = "fcPage">
+<div class="container">
+	{{> fcItem}}
+	{{#each fccomments}}
+	<div class="dialogbox">
+		<div class="body">
+			<div class="message">
+				<p>{{> fccommentItem}}</p>
+				{{formatDate submitted}}
+			</div>
+		</div>
+	</div>
+	{{/each}}
+	{{> fccommentSubmit}}
+</div>
+</template>
+<template name="fcSubmit">
+<div class="is-preload">
+	
+	<!-- Wrapper -->
+	<div id="wrapper">
+		
+		<!-- Main -->
+		<div id="main">
+			<div class="inner">
+				
+				<!-- Header -->
+				<header id="header">
+					<a href="{{pathFor route='home'}}" class="logo"><strong>YumzNUS</strong> by Joel & Wei Qi</a>
+				</header>
+				
+				<!-- Content -->
+				<section>
+					<header class="main">
+						<h1>University Town - Food Clique</h1>
+					</header>
+					<div class="fcSubmit">
+						<form class="fcSubmitForm">
+							<p> </p>
+							<p><strong>Review Title:</strong><input type="text" id="postTitle" name="postTitle" placeholder="Title" required/></p>
+							<!-- <p>Post:<input type="text" id="post" name="post"/></p> -->
+							<strong>Review Content:</strong><textarea type="text" id="post" name="post" placeholder="Please Write a Review" required></textarea>
+							<p></p>
+							<input type="submit" value="Submit"/>
+						</form>
+						<a href="{{pathFor route='home'}}"><button type="button" class="btn">Homepage</button></a>
+						<a href="{{pathFor route='fcList'}}"><button type="button" class="btn">Back</button></a>
+					</div>
+				</section>
+				
+			</div>
+		</div>
+	</div>
+</div>
+</template>
+<template name="fcList">
+<div class="is-preload">
+	<!-- Wrapper -->
+	<div id="wrapper">
+		<!-- Main -->
+		<div id="main">
+			<div class="inner">
+				<!-- Header -->
+				<header id="header">
+					<a href="{{pathFor route='home'}}" class="logo"><strong>YumzNUS</strong> by Joel & Wei Qi</a>
+				</header>
+				<!-- Content -->
+				<section>
+					<header class="main">
+						<h1>University Town - Food Clique</h1>
+						
+						<a href="{{pathFor route='home'}}"><button type="button" class="btn">Homepage</button></a>
+						
+						<button type="button" class="btn" data-toggle="collapse" data-target="#fclo">Location</button>
+						<div id="fclo" class="collapse">
+							{{> fcdes}}
+						</div>
+						{{#if currentUser}}
+						<a href="/fcSubmit"><button type="button" class="btn">Write a Review</button></a>
+						{{else}}
+						<button type="button" class="btn">Not Logged In</button><br/><br>
+						Please <a href="{{pathFor route='accounts'}}" class="major">Sign In</a> POST a Review<br/>
+						{{/if}}
+					</header>
+					
+					<!-- Uncomment below for a large picture -->
+					<!-- <span class="image main"><img src="images/pic11.jpg" alt="" /></span>
+					<p>some text</p> -->
+					{{#each fcrev}}
+					{{> fcItem}}
+					{{/each}}
+				</section>
+			</div>
+		</div>
+	</div>
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+</div>
+</template>
+<template name="fcdes">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d746.6214526487257!2d103.77262162790936!3d1.3048617723102827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da1af5cc70dc97%3A0x7b392d9d676befeb!2sFoodclique!5e0!3m2!1sen!2ssg!4v1531372526631" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+</template>

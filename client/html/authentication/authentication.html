@@ -1,0 +1,105 @@
+<template name="login">
+
+        <p> </p>
+        <center>
+			<h2>Login Page</h2>
+			<strong><a href="{{pathFor route='home'}}">Home</a></strong> or <strong><a href="{{pathFor route='register'}}">Register</a></strong>
+        </center>
+
+
+		  {{#if currentUser}}
+		  <p></p>
+			  <center>
+			  	<h3>You are already logged in!</h3>
+			  </center>
+		  {{else}}
+				
+        <form class="login">
+                <div class="input-group input-group-lg">
+                        <span class="input-group-addon">
+                         <span class="glyphicon glyphicon-user"></span>
+                        </span>
+                        <input class="form-control" name="username" type="username" placeholder="Username" autocomplete="on" required>
+                     </div>
+
+                    <div class="input-group input-group-lg">
+                        <span class="input-group-addon">
+                         <span class="glyphicon glyphicon-envelope"></span>
+                        </span>
+                        <input class="form-control" name="email" type="email" placeholder="Email address" autocomplete="on" required>
+                     </div>
+
+                     <div class="input-group input-group-lg">
+                        <span class="input-group-addon">
+                         <span class="glyphicon glyphicon-lock"></span>
+                        </span>
+                        <input class="form-control" type="password" name="password" minlength="8" placeholder="Password" required>
+                     </div>
+            <br>
+         <p><input type="submit" value="Login"></p>
+        </form>
+		  {{/if}}
+	  </template>
+	  
+	  <template name="register">
+		  <p></p>
+			  <center><h2>Register Page</h2>
+
+				<strong><a href="{{pathFor route='home'}}">Home</a></strong> or <strong><a href="{{pathFor route='login'}}">Login</a></strong>
+       
+				</center>
+				
+			  <form class="register">
+					<div class="input-group input-group-lg">
+							<span class="input-group-addon">
+							  <span class="glyphicon glyphicon-user"></span>
+							</span>
+							<input class="form-control" name="username" type="username" placeholder="Username" required>
+						  </div>
+	
+						<div class="input-group input-group-lg">
+							<span class="input-group-addon">
+							  <span class="glyphicon glyphicon-envelope"></span>
+							</span>
+							<input class="form-control" name="email" type="email" placeholder="Email address" required>
+						  </div>
+	
+						  <div class="input-group input-group-lg">
+							<span class="input-group-addon">
+							  <span class="glyphicon glyphicon-lock"></span>
+							</span>
+							<input class="form-control" type="password" name="password" minlength="8" placeholder="Password" required>
+						  </div> 
+
+						  <div class="input-group input-group-lg">
+								<span class="input-group-addon">
+								  <span class="glyphicon glyphicon-lock"></span>
+								</span>
+								<input class="form-control" type="password" name="confirmpassword" minlength="8" placeholder="Confirm Password" required>
+							  </div> 
+							  <br>
+				<p> <input type="submit" value="Register"></p>
+
+				</form>
+			</template>
+		
+			
+<!-- 	  <template name="accounts">
+		  {{#if currentUser}}
+				{{> signout}}
+		  {{else}}
+				{{> login}}
+		  {{/if}}
+		  </template> -->
+	  
+<!-- 	  <template name="signout">
+		  <form>
+				<p><input type="submit" value="Logout"></p>
+		  </form>
+	  </template>
+ -->
+	  <template name="signout">
+		<a href="#" class="logout">Logout <div class="glyphicon glyphicon-lock"></div></a>
+	  </template>
+
+

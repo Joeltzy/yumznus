@@ -1,0 +1,31 @@
+# Don't allow access to the /server directory for all robots.
+
+User-agent: Applebot
+Disallow: /server/
+Crawl-delay: 10
+
+User-agent: baiduspider
+Disallow: /server/
+Crawl-delay: 10
+
+User-agent: Bingbot
+Disallow: /server/
+Crawl-delay: 10
+
+User-agent: Googlebot
+Disallow: /server/
+Crawl-delay: 10
+
+User-agent: msnbot
+Disallow: /server/
+Crawl-delay: 10
+
+User-agent: Twitterbot
+Disallow: /server/
+Crawl-delay: 10
+
+User-agent: *
+Disallow: /
+
+
+Sitemap: https://yumznus-orbital2018.scalingo.io/sitemap.xml
