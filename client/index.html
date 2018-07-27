@@ -2,13 +2,24 @@
 	<title>YumzNUS</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="assets/css/main.css" />
 </head>
+
 <body>
 </body>
 
+<template name="scrollup">
+		<a id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+</template>
+
+<template name="scrolldown">
+		<a id="return-to-bot"><i class="fa fa-chevron-down"></i></a>
+</template>
+
 <template name="home">
 <body class="is-preload">
+	{{> scrollup}}
+	{{> scrolldown}}
+
 	<!-- Wrapper -->
 	<div id="wrapper">
 		<!-- Main -->
@@ -31,7 +42,6 @@
 					<div class="content">
 						<header>
 							<h1>YumzNUS</h1>
-
 
 							<p>
 								A
@@ -62,7 +72,6 @@
 					<header class="major">
 						<h2 id="Recommended">Did You Know? <span class="#"></span></h2>
 					</header>
-
 				</section>
 
 				<!-- Section -->
@@ -242,15 +251,12 @@
 				</ul>
 
 			</section>
+
 		</div>
 	</div>
 </div>
 <!-- Scripts -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/browser.min.js"></script>
-<script src="assets/js/breakpoints.min.js"></script>
-<script src="assets/js/util.js"></script>
-<script src="assets/js/main.js"></script>
+
 <script>
 	// Select all links with hashes
 	$('a[href*="#"]')
@@ -295,8 +301,8 @@
 <article>
 <span class="icon fa-diamond"></span>
 <div class="content">
-	<h3>{{title}} {{percen}}</h3>
-	<p>{{location}} {{short}}</p>
+	<h3>{{title}} {{star_sum}}</h3>
+	<p>{{location}}</p>
 </div>
 </article>
 {{/each}}

@@ -1,9 +1,9 @@
 const votes = [
-  // University Town Fine Food
+  
+// University Town Fine Food
   {
-    title: "Noodles",
+    title: "Fishball Noodles",
     location: "University Town Fine Food",  
-    short: "ff",
     createdOn: new Date(),
     percen: 0,
     key: 1, 
@@ -18,7 +18,6 @@ const votes = [
   {
     title: "Yong Tau Foo",
     location: "University Town Fine Food",
-    short: "ff",
     createdOn: new Date(),
     percen: 0,
     key: 2,
@@ -33,7 +32,6 @@ const votes = [
   {
     title: "Thai Food",
     location: "University Town Fine Food",
-    short: "ff",
     createdOn: new Date(),
     percen: 0,
     key: 3,
@@ -48,7 +46,6 @@ const votes = [
   {
     title: "Korean Food",
     location: "University Town Fine Food",
-    short: "ff",
     createdOn: new Date(),
     percen: 0,
     key: 4,
@@ -63,7 +60,6 @@ const votes = [
   {
     title: "Muslim Food",
     location: "University Town Fine Food",
-    short: "ff",
     createdOn: new Date(),
     percen: 0,
     key: 5,
@@ -78,7 +74,6 @@ const votes = [
   {
     title: "Dim Sum",
     location: "University Town Fine Food",
-    short: "ff",
     createdOn: new Date(),
     percen: 0,
     key: 6,
@@ -93,7 +88,6 @@ const votes = [
   {
     title: "La Mian",
     location: "University Town Fine Food",
-    short: "ff",
     createdOn: new Date(),
     percen: 0,
     key: 7,
@@ -106,11 +100,10 @@ const votes = [
     star_sum: 0
   },
 
-  // University Town Food Clique
+// University Town Food Clique
   {
-    title: "Japanese",
+    title: "Japanese Food",
     location: "University Town Food Clique",
-    short: "fc",
     createdOn: new Date(),
     percen: 0,
     key: 8,
@@ -125,7 +118,6 @@ const votes = [
   {
     title: "Astons",
     location: "University Town Food Clique",
-    short: "fc",
     createdOn: new Date(),
     percen: 0,
     key: 9,
@@ -140,19 +132,20 @@ const votes = [
   {
     title: "Cai Fan",
     location: "University Town Food Clique",
-    short: "fc",
     createdOn: new Date(),
-    up: 0,
-    down: 0,
     percen: 0,
     key: 10,
-    total: 0,
-    stars: 0
+    star1: 0,
+    star2: 0,
+    star3: 0,
+    star4: 0,
+    star5: 0,
+    count: 0,
+    star_sum: 0
   },
   {
     title: "Ban Mian",
     location: "University Town Food Clique",
-    short: "fc",
     createdOn: new Date(),
     percen: 0,
     key: 11,
@@ -167,7 +160,6 @@ const votes = [
   {
     title: "Si Chuan",
     location: "University Town Food Clique",
-    short: "fc",
     createdOn: new Date(),
     percen: 0,
     key: 12,
@@ -180,11 +172,10 @@ const votes = [
     star_sum: 0
   },
 
-  // Faculty of Arts & Social Science (The Deck)
+// Faculty of Arts & Social Science (The Deck)
   {
     title: "Chicken Rice",
     location: "Faculty of Arts & Social Science - The Deck",
-    short: "deck",
     createdOn: new Date(),
     percen: 0,
     key: 13,
@@ -197,9 +188,8 @@ const votes = [
     star_sum: 0
   },
   {
-    title: " Claypot",
+    title: "Claypot",
     location: "Faculty of Arts & Social Science - The Deck",
-    short: "deck",
     createdOn: new Date(),
     percen: 0,
     key: 14,
@@ -214,7 +204,6 @@ const votes = [
   {
     title: "Yong Tau Foo",
     location: "Faculty of Arts & Social Science - The Deck",
-    short: "deck",
     createdOn: new Date(),
     percen: 0,
     key: 15,
@@ -229,19 +218,20 @@ const votes = [
   {
     title: "Ma La",
     location: "Faculty of Arts & Social Science - The Deck",
-    short: "deck",
     createdOn: new Date(),
-    up: 0,
-    down: 0,
     percen: 0,
     key: 15,
-    total: 0,
-    stars: 0
+    star1: 0,
+    star2: 0,
+    star3: 0,
+    star4: 0,
+    star5: 0,
+    count: 0,
+    star_sum: 0
   },
   {
-    title: "Noodles",
+    title: "Noodles Stall",
     location: "Faculty of Arts & Social Science - The Deck",
-    short: "deck",
     createdOn: new Date(),
     percen: 0,
     key: 16,
@@ -253,6 +243,265 @@ const votes = [
     count: 0,
     star_sum: 0
   },
+  {
+    title: "Pizza Hut",
+    location: "Faculty of Arts & Social Science - The Deck",
+    createdOn: new Date(),
+    percen: 0,
+    key: 17,
+    star1: 0,
+    star2: 0,
+    star3: 0,
+    star4: 0,
+    star5: 0,
+    count: 0,
+    star_sum: 0
+  },
+
+// Faculty of Science (Air-con)
+  {
+    title: "Taiwan Food",
+    location: "Faculty of Science (Air-con)",
+    createdOn: new Date(),
+    percen: 0,
+    key: 18,
+    star1: 0,
+    star2: 0,
+    star3: 0,
+    star4: 0,
+    star5: 0,
+    count: 0,
+    star_sum: 0
+  },
+  {
+    title: "Drink Stall",
+    location: "Faculty of Science (Air-con)",
+    createdOn: new Date(),
+    percen: 0,
+    key: 19,
+    star1: 0,
+    star2: 0,
+    star3: 0,
+    star4: 0,
+    star5: 0,
+    count: 0,
+    star_sum: 0
+  },
+  {
+    title: "Pasta Express",
+    location: "Faculty of Science (Air-con)",
+    createdOn: new Date(),
+    percen: 0,
+    key: 20,
+    star1: 0,
+    star2: 0,
+    star3: 0,
+    star4: 0,
+    star5: 0,
+    count: 0,
+    star_sum: 0
+  },
+
+// Faculty of Science (Frontier)
+  {
+    title: "Noodles",
+    location: "Faculty of Science - Frontier",
+    createdOn: new Date(),
+    percen: 0,
+    key: 21,
+    star1: 0,
+    star2: 0,
+    star3: 0,
+    star4: 0,
+    star5: 0,
+    count: 0,
+    star_sum: 0
+  },
+  {
+    title: "Chicken Rice Stall",
+    location: "Faculty of Science - Frontier",
+    createdOn: new Date(),
+    percen: 0,
+    key: 22,
+    star1: 0,
+    star2: 0,
+    star3: 0,
+    star4: 0,
+    star5: 0,
+    count: 0,
+    star_sum: 0
+  },
+  {
+    title: "Western Food",
+    location: "Faculty of Science - Frontier",
+    createdOn: new Date(),
+    percen: 0,
+    key: 23,
+    star1: 0,
+    star2: 0,
+    star3: 0,
+    star4: 0,
+    star5: 0,
+    count: 0,
+    star_sum: 0
+  },
+  {
+    title: "Fruits Stall",
+    location: "Faculty of Science - Frontier",
+    createdOn: new Date(),
+    percen: 0,
+    key: 24,
+    star1: 0,
+    star2: 0,
+    star3: 0,
+    star4: 0,
+    star5: 0,
+    count: 0,
+    star_sum: 0
+  },
+  {
+    title: "Dessert Stall",
+    location: "Faculty of Science - Frontier",
+    createdOn: new Date(),
+    percen: 0,
+    key: 25,
+    star1: 0,
+    star2: 0,
+    star3: 0,
+    star4: 0,
+    star5: 0,
+    count: 0,
+    star_sum: 0
+  },
+  {
+    title: "Korean Stall",
+    location: "Faculty of Science - Frontier",
+    createdOn: new Date(),
+    percen: 0,
+    key: 26,
+    star1: 0,
+    star2: 0,
+    star3: 0,
+    star4: 0,
+    star5: 0,
+    count: 0,
+    star_sum: 0
+  },
+  {
+    title: "Japanese Stall",
+    location: "Faculty of Science - Frontier",
+    createdOn: new Date(),
+    percen: 0,
+    key: 27,
+    star1: 0,
+    star2: 0,
+    star3: 0,
+    star4: 0,
+    star5: 0,
+    count: 0,
+    star_sum: 0
+  },
+
+// Faculty of Science (Frontier)
+  {
+    title: "Noodles",
+    location: "Faculty of Science - Frontier",
+    createdOn: new Date(),
+    percen: 0,
+    key: 21,
+    star1: 0,
+    star2: 0,
+    star3: 0,
+    star4: 0,
+    star5: 0,
+    count: 0,
+    star_sum: 0
+  },
+  {
+    title: "Chicken Rice Stall",
+    location: "Faculty of Science - Frontier",
+    createdOn: new Date(),
+    percen: 0,
+    key: 22,
+    star1: 0,
+    star2: 0,
+    star3: 0,
+    star4: 0,
+    star5: 0,
+    count: 0,
+    star_sum: 0
+  },
+  {
+    title: "Western Food",
+    location: "Faculty of Science - Frontier",
+    createdOn: new Date(),
+    percen: 0,
+    key: 23,
+    star1: 0,
+    star2: 0,
+    star3: 0,
+    star4: 0,
+    star5: 0,
+    count: 0,
+    star_sum: 0
+  },
+  {
+    title: "Fruits Stall",
+    location: "Faculty of Science - Frontier",
+    createdOn: new Date(),
+    percen: 0,
+    key: 24,
+    star1: 0,
+    star2: 0,
+    star3: 0,
+    star4: 0,
+    star5: 0,
+    count: 0,
+    star_sum: 0
+  },
+  {
+    title: "Dessert Stall",
+    location: "Faculty of Science - Frontier",
+    createdOn: new Date(),
+    percen: 0,
+    key: 25,
+    star1: 0,
+    star2: 0,
+    star3: 0,
+    star4: 0,
+    star5: 0,
+    count: 0,
+    star_sum: 0
+  },
+  {
+    title: "Korean Stall",
+    location: "Faculty of Science - Frontier",
+    createdOn: new Date(),
+    percen: 0,
+    key: 26,
+    star1: 0,
+    star2: 0,
+    star3: 0,
+    star4: 0,
+    star5: 0,
+    count: 0,
+    star_sum: 0
+  },
+  {
+    title: "Japanese Stall",
+    location: "Faculty of Science - Frontier",
+    createdOn: new Date(),
+    percen: 0,
+    key: 27,
+    star1: 0,
+    star2: 0,
+    star3: 0,
+    star4: 0,
+    star5: 0,
+    count: 0,
+    star_sum: 0
+  },
+
 
 ]
 

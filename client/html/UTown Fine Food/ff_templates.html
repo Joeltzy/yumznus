@@ -2,13 +2,16 @@
         {{body}}
     </template>
     
-    <template name="ffcommentSubmit">
+<template name="ffcommentSubmit">
+    {{> scrollup}}
+    {{> scrolldown}}
         <form name="comment" >
             {{#if currentUser}}
                 <input name="body" id="body" required>
                 <input type="submit" value="Add comment">
             {{else}}
-                Please <a href="{{pathFor route='accounts'}}" class="major">Sign In</a> POST a Comment.<br/>
+                Please 
+                <a href="{{pathFor route='login'}}" class="major">Sign In</a> to POST a Comment.<br/>
             {{/if}}
         </form>
         <a href="{{pathFor route='ffList'}}"><button type="button" class="btn">Back</button></a>
@@ -52,6 +55,8 @@
             
     
     <template name="ffSubmit">
+    {{> scrollup}}
+    {{> scrolldown}}
             <div class="is-preload">
         
                 <!-- Wrapper -->
@@ -76,7 +81,6 @@
                                                 <form class="ffSubmitForm">
                                                             <p> </p>
                                                             <p><strong>Review Title:</strong><input type="text" id="postTitle" name="postTitle" placeholder="Title" required/></p>
-                                                            <!-- <p>Post:<input type="text" id="post" name="post"/></p> -->
                                                             <strong>Review Content:</strong><textarea type="text" id="post" name="post" placeholder="Please Write a Review" required></textarea>
                                                             <p></p>
                                                             <input type="submit" value="Submit"/>
@@ -95,6 +99,8 @@
     
     
     <template name="ffList">
+    {{> scrollup}}
+    {{> scrolldown}}
         <div class="is-preload">
     
             <!-- Wrapper -->
@@ -125,13 +131,10 @@
                                                 <a href="/ffSubmit"><button type="button" class="btn">Write a Review</button></a>
                                             {{else}}
                                                 <button type="button" class="btn">Not Logged In</button><br/><br>
-                                                Please <a href="{{pathFor route='accounts'}}" class="major">Sign In</a> POST a Review<br/>
+                                                Please <a href="{{pathFor route='login'}}" class="major">Sign In</a> to POST a Review<br/>
                                             {{/if}}
                                         </header>
                                         
-                                <!-- Uncomment below for a large picture -->
-                                        <!-- <span class="image main"><img src="images/pic11.jpg" alt="" /></span>
-                                        <p>some text</p> -->
                                         {{#each ffrev}}
                                             {{> ffItem}}
                                         {{/each}}
@@ -141,13 +144,6 @@
                         </div>
                 </div>
     
-            <!-- Scripts -->
-                <script src="assets/js/jquery.min.js"></script>
-                <script src="assets/js/browser.min.js"></script>
-                <script src="assets/js/breakpoints.min.js"></script>
-                <script src="assets/js/util.js"></script>
-                <script src="assets/js/main.js"></script>
-    
         </div>
     </template>
     
@@ -156,6 +152,4 @@
 
     </template>
 
-<!-- 
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1994.3926673128697!2d103.77258275801523!3d1.3038198812785688!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da1af5ddd7fbb1%3A0xe0a05e09b632c4a0!2sFine+Food!5e0!3m2!1sen!2ssg!4v1527600622010" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe> -->
     

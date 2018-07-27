@@ -1,4 +1,6 @@
 <template name="vote_list">
+	{{> scrollup}}
+	{{> scrolldown}}
 <div class="is-preload">
 	<!-- Wrapper -->
 	<div id="wrapper">
@@ -9,12 +11,11 @@
 				<header id="header">
 					<a href="{{pathFor route='home'}}" class="logo"><strong>YumzNUS</strong> by Joel & Wei Qi</a>
 				</header>
-
 				<!-- Content -->
 				<section>
 					<header class="main">
 						<h1>Voting Section</h1>
-						<!-- <p><a href="{{pathFor route='home'}}"><button type="button" class="btn">Homepage</button></a></p> -->
+
 					</header>
 					{{#if currentUser}}
 					<h3>Please vote a food stall:</h3>
@@ -27,6 +28,7 @@
 						<p>{{>vote_item}}</p>
 						{{/each}}
 					</div>
+
 					<!-- University Town Food Clique Data -->
 					<button type="button" class="btn" data-toggle="collapse" data-target="#fcsort">University Town - Food Clique</button><br>
 					<div id="fcsort" class="collapse">
@@ -35,6 +37,25 @@
 						{{>vote_item}}
 						{{/each}}
 					</div>
+
+					<!-- Faculty of Science (Air-con) Data -->
+					<button type="button" class="btn" data-toggle="collapse" data-target="#aircon">Faculty of Science - Air-con</button>
+					<div id="aircon" class="collapse">
+						<p></p>
+						{{#each sortfosaircon}}
+						{{>vote_item}}
+						{{/each}}
+					</div>
+
+					<!-- Faculty of Science (Frontier) Data -->
+					<button type="button" class="btn" data-toggle="collapse" data-target="#frontier">Faculty of Science - Frontier</button>
+					<div id="frontier" class="collapse">
+						<p></p>
+						{{#each sortfosfrontier}}
+						{{>vote_item}}
+						{{/each}}
+					</div>
+
 					<!-- Faculty of Arts & Social Science Data -->
 					<button type="button" class="btn" data-toggle="collapse" data-target="#deck">Faculty of Arts & Social Science</button>
 					<div id="deck" class="collapse">
@@ -44,22 +65,14 @@
 						{{/each}}
 					</div>
 					{{else}}
-						Please <a href="{{pathFor route='login'}}" class="major">Sign In</a> to Vote.
+					Please <a href="{{pathFor route='login'}}" class="major">Sign In</a> to Vote.
 					{{/if}}
 					
-					<!-- Uncomment below for a large picture -->
-					<!-- <span class="image main"><img src="images/pic11.jpg" alt="" /></span>
-					<p>some text</p> -->
 				</section>
 			</div>
 		</div>
 	</div>
 	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
 </div>
 </template>
 <template name="vote_item">
@@ -71,7 +84,7 @@
 			<div class="empty-stars"></div>
 			<div class="full-stars" style="width:{{percen}}%"></div>
 		</div>
-		{{star_sum}} {{star1}}
+		{{star_sum}}
 		<p><u><strong>{{star_sum}}</strong></u> Average Star(s) based on <u><strong>{{count}}</strong></u> Reviews</p>
 		
 		<p><a href="#" class="btn btn-default js-one">1
@@ -97,18 +110,17 @@
 			
 		</a>
 	</p>
-	<span style="color:blue">Last Updated: {{ formatDate createdOn}}</span>
+	<span style="color:blue">Last Updated: {{ formatDate createdOn }}</span>
 	
 </div>
 </div>
 </template>
 
-	
 <!-- <div class="container">
 <div class="progress" style="height: 20px;background-color: rgba(255,0,0,0.1);">
-		<div class="progress-bar progress-bar-danger" role="progressbar"
-				aria-valuemin="0" aria-valuemax="100" style="width:{{percen}}%">
-					{{percen}}%
-		</div>
+			<div class="progress-bar progress-bar-danger" role="progressbar"
+						aria-valuemin="0" aria-valuemax="100" style="width:{{percen}}%">
+							{{percen}}%
+			</div>
 </div>
 </div> -->

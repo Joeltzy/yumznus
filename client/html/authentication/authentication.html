@@ -1,5 +1,6 @@
 <template name="login">
-
+	{{> scrollup}}
+	{{> scrolldown}}
         <p> </p>
         <center>
 			<h2>Login Page</h2>
@@ -42,6 +43,7 @@
 	  </template>
 	  
 	  <template name="register">
+	  	{{> scroll}}
 		  <p></p>
 			  <center><h2>Register Page</h2>
 
@@ -82,22 +84,7 @@
 
 				</form>
 			</template>
-		
-			
-<!-- 	  <template name="accounts">
-		  {{#if currentUser}}
-				{{> signout}}
-		  {{else}}
-				{{> login}}
-		  {{/if}}
-		  </template> -->
-	  
-<!-- 	  <template name="signout">
-		  <form>
-				<p><input type="submit" value="Logout"></p>
-		  </form>
-	  </template>
- -->
+
 	  <template name="signout">
 		<a href="#" class="logout">Logout <div class="glyphicon glyphicon-lock"></div></a>
 	  </template>

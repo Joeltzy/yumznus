@@ -3,17 +3,6 @@ function sortNumber(a, b) {
     return a - b;
 }
 
-setInterval(function (){
-  Meteor.call("getServerTime", function (error, result){
-    Session.set("time", result);
-  });
-}, 1000);
-
-Template.home.helpers({
-  time: function(){
-    return Session.get("time");
-  }
-})
 
 // Function to output top 4 food items
 Template.recommended.helpers({
@@ -30,7 +19,6 @@ Template.recommended.helpers({
                     arr = arr.sort(sortNumber).reverse();
                 }
             }
-            console.log(arr);
             // i = 4 because top 4 food items
             for (i = 0; i < 4; i++) {
                 actual.push(arr[i]);
@@ -39,27 +27,28 @@ Template.recommended.helpers({
                 final.push(Votes.find({
                     percen: actual[i]
                 }).fetch()[0]);
-                console.log(Votes.find({
-                    percen: actual[i]
-                }).fetch()[0]);
+
             }
             return final;
         }
     })
-    // Function to Sort food stalls in Alphabetical Order
+
+
+// Function to Sort food stalls in Alphabetical Order
 Template.vote_list.helpers({
-        // Find Votes
+// Find Votes
         votes: function() {
             return Votes.find();
         },
-        // University Town Find Food
+
+// University Town Find Food
         sortff: function() {
             var sorting_list = Votes.find().fetch();
             var i;
             var arr = new Array();
             var actual = new Array();
             for (i = 0; i < Votes.find().count(); i++) {
-                if (sorting_list[i]['short'] == 'ff') {
+                if (sorting_list[i]['location'] == 'University Town Fine Food') {
                     arr.push(sorting_list[i].title);
                 }
             }
@@ -71,14 +60,15 @@ Template.vote_list.helpers({
             }
             return actual;
         },
-        // University Town Food Clique
+
+// University Town Food Clique
         sortfc: function() {
             var sorting_list = Votes.find().fetch();
             var i;
             var arr = new Array();
             var actual = new Array();
             for (i = 0; i < Votes.find().count(); i++) {
-                if (sorting_list[i]['short'] == 'fc') {
+                if (sorting_list[i]['location'] == 'University Town Food Clique') {
                     arr.push(sorting_list[i].title);
                 }
             }
@@ -90,14 +80,55 @@ Template.vote_list.helpers({
             }
             return actual;
         },
-        //Faculty of Arts & Social Science (The Deck)
+
+//Faculty of Arts & Social Science (The Deck)
         sortdeck: function() {
             var sorting_list = Votes.find().fetch();
             var i;
             var arr = new Array();
             var actual = new Array();
             for (i = 0; i < Votes.find().count(); i++) {
-                if (sorting_list[i]['short'] == 'deck') {
+                if (sorting_list[i]['location'] == 'Faculty of Arts & Social Science - The Deck') {
+                    arr.push(sorting_list[i].title);
+                }
+            }
+            arr.sort();
+            for (i = 0; i < arr.length; i++) {
+                actual.push(Votes.find({
+                    title: arr[i]
+                }).fetch()[0]);
+            }
+            return actual;
+        },
+
+//Faculty of Science (Air-con)
+        sortfosaircon: function() {
+            var sorting_list = Votes.find().fetch();
+            var i;
+            var arr = new Array();
+            var actual = new Array();
+            for (i = 0; i < Votes.find().count(); i++) {
+                if (sorting_list[i]['location'] == 'Faculty of Science (Air-con)') {
+                    arr.push(sorting_list[i].title);
+                }
+            }
+            arr.sort();
+            for (i = 0; i < arr.length; i++) {
+                actual.push(Votes.find({
+                    title: arr[i]
+                }).fetch()[0]);
+            }
+            return actual;
+        },
+
+//Faculty of Science (Air-con)
+        sortfosfrontier: function() {
+            var sorting_list = Votes.find().fetch();
+            var i;
+            var arr = new Array();
+            var actual = new Array();
+            for (i = 0; i < Votes.find().count(); i++) {
+                if (sorting_list[i]['location'] == 'Faculty of Science - Frontier') {
                     arr.push(sorting_list[i].title);
                 }
             }
@@ -109,12 +140,15 @@ Template.vote_list.helpers({
             }
             return actual;
         }
+
     })
-    // Function for Upvote/Downvote of Food Canteens
+
+
+// Function for Upvote/Downvote of Food Canteens
 Template.vote_item.events({
     "click .js-one": function(event) {
         var vote_id = this._id;
-        console.log("Up voting recommend with id " + vote_id);
+
         Votes.update({
             _id: vote_id
         }, {
@@ -136,7 +170,7 @@ Template.vote_item.events({
     },
     "click .js-two": function(event) {
         var vote_id = this._id;
-        console.log("Up voting recommend with id " + vote_id);
+
         Votes.update({
             _id: vote_id
         }, {
@@ -159,7 +193,7 @@ Template.vote_item.events({
 
     "click .js-three": function(event) {
         var vote_id = this._id;
-        console.log("Up voting recommend with id " + vote_id);
+
         Votes.update({
             _id: vote_id
         }, {
@@ -181,7 +215,7 @@ Template.vote_item.events({
     },
     "click .js-four": function(event) {
         var vote_id = this._id;
-        console.log("Up voting recommend with id " + vote_id);
+
         Votes.update({
             _id: vote_id
         }, {
@@ -203,7 +237,6 @@ Template.vote_item.events({
     },
     "click .js-five": function(event) {
         var vote_id = this._id;
-        console.log("Up voting recommend with id " + vote_id);
         Votes.update({
             _id: vote_id
         }, {

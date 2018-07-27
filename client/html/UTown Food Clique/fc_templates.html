@@ -1,13 +1,22 @@
 <template name="fccommentItem">
 {{body}}
 </template>
+
 <template name="fccommentSubmit">
-<form name="comment" >
-	<input name="body" id="body" required>
-	<input type="submit" value="Add comment">
-</form>
-<a href="{{pathFor route='fcList'}}"><button type="button" class="btn">Back</button></a>
-</template>
+	{{> scrollup}}
+	{{> scrolldown}}
+        <form name="comment" >
+            {{#if currentUser}}
+                <input name="body" id="body" required>
+                <input type="submit" value="Add comment">
+            {{else}}
+                Please 
+                <a href="{{pathFor route='login'}}" class="major">Sign In</a> to POST a Comment.<br/>
+            {{/if}}
+        </form>
+        <a href="{{pathFor route='fcList'}}"><button type="button" class="btn">Back</button></a>
+    </template>
+
 <template name="fcItem">
 <hr class="major" />
 <h2>{{postTitle}}</h2>
@@ -24,6 +33,7 @@
 <a class="btn pull-right btn-small" href="{{pathFor 'accounts'}}"><i class="fa fa-chevron-up"></i></a>
 {{/if}}
 </template>
+
 <template name = "fcPage">
 <div class="container">
 	{{> fcItem}}
@@ -41,6 +51,8 @@
 </div>
 </template>
 <template name="fcSubmit">
+	{{> scrollup}}
+	{{> scrolldown}}
 <div class="is-preload">
 	
 	<!-- Wrapper -->
@@ -79,7 +91,10 @@
 	</div>
 </div>
 </template>
+
 <template name="fcList">
+	{{> scrollup}}
+	{{> scrolldown}}
 <div class="is-preload">
 	<!-- Wrapper -->
 	<div id="wrapper">
@@ -101,30 +116,24 @@
 						<div id="fclo" class="collapse">
 							{{> fcdes}}
 						</div>
+
 						{{#if currentUser}}
 						<a href="/fcSubmit"><button type="button" class="btn">Write a Review</button></a>
 						{{else}}
 						<button type="button" class="btn">Not Logged In</button><br/><br>
-						Please <a href="{{pathFor route='accounts'}}" class="major">Sign In</a> POST a Review<br/>
+						Please <a href="{{pathFor route='login'}}" class="major">Sign In</a> to POST a Review<br/>
 						{{/if}}
 					</header>
 					
-					<!-- Uncomment below for a large picture -->
-					<!-- <span class="image main"><img src="images/pic11.jpg" alt="" /></span>
-					<p>some text</p> -->
+
 					{{#each fcrev}}
-					{{> fcItem}}
+						{{> fcItem}}
 					{{/each}}
 				</section>
 			</div>
 		</div>
 	</div>
-	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
+
 </div>
 </template>
 <template name="fcdes">
