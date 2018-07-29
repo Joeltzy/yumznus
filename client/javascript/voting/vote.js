@@ -3,6 +3,9 @@ function sortNumber(a, b) {
     return a - b;
 }
 
+function getSum(total, num) {
+    return total + num;
+}
 
 // Function to output top 4 food items
 Template.recommended.helpers({
@@ -40,6 +43,8 @@ Template.vote_list.helpers({
         votes: function() {
             return Votes.find();
         },
+
+
 
 // University Town Find Food
         sortff: function() {
@@ -139,8 +144,73 @@ Template.vote_list.helpers({
                 }).fetch()[0]);
             }
             return actual;
-        }
+        },
 
+        ff_count: function() {
+            var arr = new Array();
+            var count_list = Votes.find().fetch();
+            for (i = 0; i < Votes.find().count(); i++) {
+                if (count_list[i].location == "University Town Fine Food") {
+                    arr.push(count_list[i].count);
+                }
+            }
+            return arr.reduce(getSum);
+        },
+
+        fc_count: function() {
+            var arr = new Array();
+            var count_list = Votes.find().fetch();
+            for (i = 0; i < Votes.find().count(); i++) {
+                if (count_list[i].location == "University Town Food Clique") {
+                    arr.push(count_list[i].count);
+                }
+            }
+            return arr.reduce(getSum);
+        },
+
+        ac_count: function() {
+            var arr = new Array();
+            var count_list = Votes.find().fetch();
+            for (i = 0; i < Votes.find().count(); i++) {
+                if (count_list[i].location == "Faculty of Science (Air-con)") {
+                    arr.push(count_list[i].count);
+                }
+            }
+            return arr.reduce(getSum);
+        },
+
+        frontier_count: function() {
+            var arr = new Array();
+            var count_list = Votes.find().fetch();
+            for (i = 0; i < Votes.find().count(); i++) {
+                if (count_list[i].location == "Faculty of Science - Frontier") {
+                    arr.push(count_list[i].count);
+                }
+            }
+            return arr.reduce(getSum);
+        },
+
+        deck_count: function() {
+            var arr = new Array();
+            var count_list = Votes.find().fetch();
+            for (i = 0; i < Votes.find().count(); i++) {
+                if (count_list[i].location == "Faculty of Arts & Social Science - The Deck") {
+                    arr.push(count_list[i].count);
+                }
+            }
+            return arr.reduce(getSum);
+        },
+
+        total_count: function() {
+            var arr = new Array();
+            var count_list = Votes.find().fetch();
+            console.log(count_list[16].location);
+            for (i = 0; i < Votes.find().count(); i++) {
+                arr.push(count_list[i].count);
+            }
+            
+            return arr.reduce(getSum);
+        }, 
     })
 
 
@@ -161,7 +231,7 @@ Template.vote_item.events({
             _id: vote_id
         }, {
             $set: {
-                star_sum: ((this.star1 + 1) * 1 + (this.star2) * 2 + (this.star3) * 3 + (this.star4) * 4 + (this.star5) * 5) / (this.count + 1),
+                star_sum: Math.round(((this.star1 + 1) * 1 + (this.star2) * 2 + (this.star3) * 3 + (this.star4) * 4 + (this.star5) * 5) / (this.count + 1) * 10)/ 10,
                 percen: (((this.star1 + 1) * 1 + (this.star2) * 2 + (this.star3) * 3 + (this.star4) * 4 + (this.star5) * 5) / (this.count + 1)) * 20,
                 createdOn: new Date()
             }
@@ -183,7 +253,7 @@ Template.vote_item.events({
             _id: vote_id
         }, {
             $set: {
-                star_sum: ((this.star1) * 1 + (this.star2 + 1) * 2 + (this.star3) * 3 + (this.star4) * 4 + (this.star5) * 5) / (this.count + 1),
+                star_sum: Math.round(((this.star1) * 1 + (this.star2 + 1) * 2 + (this.star3) * 3 + (this.star4) * 4 + (this.star5) * 5) / (this.count + 1) * 10) / 10,
                 percen: (((this.star1) * 1 + (this.star2 + 1) * 2 + (this.star3) * 3 + (this.star4) * 4 + (this.star5) * 5) / (this.count + 1)) * 20,
                 createdOn: new Date()
             }
@@ -206,7 +276,7 @@ Template.vote_item.events({
             _id: vote_id
         }, {
             $set: {
-                star_sum: ((this.star1) * 1 + (this.star2) * 2 + (this.star3 + 1) * 3 + (this.star4) * 4 + (this.star5) * 5) / (this.count + 1),
+                star_sum: Math.round(((this.star1) * 1 + (this.star2) * 2 + (this.star3 + 1) * 3 + (this.star4) * 4 + (this.star5) * 5) / (this.count + 1) * 10) / 10,
                 percen: (((this.star1) * 1 + (this.star2) * 2 + (this.star3 + 1) * 3 + (this.star4) * 4 + (this.star5) * 5) / (this.count + 1)) * 20,
                 createdOn: new Date()
             }
@@ -228,7 +298,7 @@ Template.vote_item.events({
             _id: vote_id
         }, {
             $set: {
-                star_sum: ((this.star1) * 1 + (this.star2) * 2 + (this.star3) * 3 + (this.star4 + 1) * 4 + (this.star5) * 5) / (this.count + 1),
+                star_sum: Math.round(((this.star1) * 1 + (this.star2) * 2 + (this.star3) * 3 + (this.star4 + 1) * 4 + (this.star5) * 5) / (this.count + 1) * 10) / 10,
                 percen: (((this.star1) * 1 + (this.star2) * 2 + (this.star3) * 3 + (this.star4 + 1) * 4 + (this.star5) * 5) / (this.count + 1)) * 20,
                 createdOn: new Date()
             }
@@ -249,7 +319,7 @@ Template.vote_item.events({
             _id: vote_id
         }, {
             $set: {
-                star_sum: ((this.star1) * 1 + (this.star2) * 2 + (this.star3) * 3 + (this.star4) * 4 + (this.star5 + 1) * 5) / (this.count + 1),
+                star_sum: Math.round(((this.star1) * 1 + (this.star2) * 2 + (this.star3) * 3 + (this.star4) * 4 + (this.star5 + 1) * 5) / (this.count + 1) * 10) / 10,
                 percen: (((this.star1) * 1 + (this.star2) * 2 + (this.star3) * 3 + (this.star4) * 4 + (this.star5 + 1) * 5) / (this.count + 1)) * 20,
                 createdOn: new Date()
             }

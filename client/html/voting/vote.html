@@ -1,6 +1,6 @@
 <template name="vote_list">
-	{{> scrollup}}
-	{{> scrolldown}}
+{{> scrollup}}
+{{> scrolldown}}
 <div class="is-preload">
 	<!-- Wrapper -->
 	<div id="wrapper">
@@ -15,112 +15,158 @@
 				<section>
 					<header class="main">
 						<h1>Voting Section</h1>
-
-					</header>
-					{{#if currentUser}}
-					<h3>Please vote a food stall:</h3>
-					
-					<!-- University Town Fine Food Data -->
-					<button type="button" class="btn" data-toggle="collapse" data-target="#ffsort">University Town - Fine Food</button><br>
-					<div id="ffsort" class="collapse">
-						<p></p>
-						{{#each sortff}}
-						<p>{{>vote_item}}</p>
-						{{/each}}
-					</div>
-
-					<!-- University Town Food Clique Data -->
-					<button type="button" class="btn" data-toggle="collapse" data-target="#fcsort">University Town - Food Clique</button><br>
-					<div id="fcsort" class="collapse">
-						<p></p>
-						{{#each sortfc}}
-						{{>vote_item}}
-						{{/each}}
-					</div>
-
-					<!-- Faculty of Science (Air-con) Data -->
-					<button type="button" class="btn" data-toggle="collapse" data-target="#aircon">Faculty of Science - Air-con</button>
-					<div id="aircon" class="collapse">
-						<p></p>
-						{{#each sortfosaircon}}
-						{{>vote_item}}
-						{{/each}}
-					</div>
-
-					<!-- Faculty of Science (Frontier) Data -->
-					<button type="button" class="btn" data-toggle="collapse" data-target="#frontier">Faculty of Science - Frontier</button>
-					<div id="frontier" class="collapse">
-						<p></p>
-						{{#each sortfosfrontier}}
-						{{>vote_item}}
-						{{/each}}
-					</div>
-
-					<!-- Faculty of Arts & Social Science Data -->
-					<button type="button" class="btn" data-toggle="collapse" data-target="#deck">Faculty of Arts & Social Science</button>
-					<div id="deck" class="collapse">
-						<p></p>
-						{{#each sortdeck}}
-						{{>vote_item}}
-						{{/each}}
+						{{#if currentUser}}
+						<!-- Table -->
+						<h3>Table of Canteens</h3>
+						
+						<div class="table-wrapper">
+							<table>
+								<thead>
+									<tr>
+										<th>Location</th>
+										<th>Name</th>
+										<th>Number of Votes</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>University Town</td>
+										<td>
+											<!-- University Town Fine Food Data -->
+											<button type="button" class="btn" data-toggle="collapse" data-target="#ffsort">Fine Food</button><br>
+											<div id="ffsort" class="collapse">
+												<p></p>
+												{{#each sortff}}
+												<p>{{>vote_item}}</p>
+												{{/each}}
+											</div>
+										</td>
+										<td>{{ff_count}}</td>
+									</tr>
+									<tr>
+										<td>University Town</td>
+										<td>
+											<!-- University Town Food Clique Data -->
+											<button type="button" class="btn" data-toggle="collapse" data-target="#fcsort">Food Clique</button><br>
+											<div id="fcsort" class="collapse">
+												<p></p>
+												{{#each sortfc}}
+												{{>vote_item}}
+												{{/each}}
+											</div>
+										</td>
+										<td>{{fc_count}}</td>
+									</tr>
+									<tr>
+										<td>Faculty of Science</td>
+										<td>
+											<!-- Faculty of Science (Air-con) Data -->
+											<button type="button" class="btn" data-toggle="collapse" data-target="#aircon">Air-con Canteen</button>
+											<div id="aircon" class="collapse">
+												<p></p>
+												{{#each sortfosaircon}}
+												{{>vote_item}}
+												{{/each}}
+											</div>
+										</td>
+										<td>{{ac_count}}</td>
+										
+									</tr>
+									<tr>
+										<td>Faculty of Science</td>
+										<td>					<!-- Faculty of Science (Frontier) Data -->
+										<button type="button" class="btn" data-toggle="collapse" data-target="#frontier">Frontier</button>
+										<div id="frontier" class="collapse">
+											<p></p>
+											{{#each sortfosfrontier}}
+											{{>vote_item}}
+											{{/each}}
+										</div>
+									</td>
+									<td>{{frontier_count}}</td>
+								</tr>
+								<tr>
+									<td>Faculty of Arts & Social Science</td>
+									<td>
+										<!-- Faculty of Arts & Social Science Data -->
+										<button type="button" class="btn" data-toggle="collapse" data-target="#deck">The Deck</button>
+										<div id="deck" class="collapse">
+											<p></p>
+											{{#each sortdeck}}
+											{{>vote_item}}
+											{{/each}}
+										</div>
+									</td>
+									<td>{{deck_count}}</td>
+									
+								</tr>
+							</tbody>
+							<tfoot>
+							<tr>
+								<td colspan="2"></td>
+								<strong><td>{{total_count}}</td></strong>
+							</tr>
+							</tfoot>
+						</table>
 					</div>
 					{{else}}
 					Please <a href="{{pathFor route='login'}}" class="major">Sign In</a> to Vote.
 					{{/if}}
-					
-				</section>
-			</div>
+				</header>
+				
+				
+			</section>
 		</div>
 	</div>
-	<!-- Scripts -->
+</div>
+<!-- Scripts -->
 </div>
 </template>
 <template name="vote_item">
 <div class="panel panel-default">
-	<div class="panel-heading"><strong>{{title}} at {{location}}</strong></div>
-	<div class="panel-body">
-		User Rating:
-		<div class="ratings">
-			<div class="empty-stars"></div>
-			<div class="full-stars" style="width:{{percen}}%"></div>
-		</div>
-		{{star_sum}}
-		<p><u><strong>{{star_sum}}</strong></u> Average Star(s) based on <u><strong>{{count}}</strong></u> Reviews</p>
-		
-		<p><a href="#" class="btn btn-default js-one">1
-			<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-			
-		</a>
-		<a href="#" class="btn btn-default js-two">2
-			<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-			
-		</a>
-		<a href="#" class="btn btn-default js-three">3
-			<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-			
-		</a>
-		<a href="#" class="btn btn-default js-four">4
-			<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-			
-		</a>
-		
-		
-		<a href="#" class="btn btn-default js-five">5
-			<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-			
-		</a>
-	</p>
-	<span style="color:blue">Last Updated: {{ formatDate createdOn }}</span>
+<div class="panel-heading"><strong>{{title}} at {{location}}</strong></div>
+<div class="panel-body">
 	
+	<strong><nobr style="height:10px;font-size:40px;">{{star_sum}}</nobr></strong>
+	<div class="ratings">
+		<div class="empty-stars"></div>
+		<div class="full-stars" style="width:{{percen}}%"></div>
+	</div>
+	<div ><strong style="color:#959191;">{{count}}</strong> Reviews</div><br>
+	
+	
+	<p><a href="#" class="btn btn-default js-one">1
+		<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+		
+	</a>
+	<a href="#" class="btn btn-default js-two">2
+		<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+		
+	</a>
+	<a href="#" class="btn btn-default js-three">3
+		<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+		
+	</a>
+	<a href="#" class="btn btn-default js-four">4
+		<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+		
+	</a>
+	
+	
+	<a href="#" class="btn btn-default js-five">5
+		<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+		
+	</a>
+</p>
+<span style="color:black">Last Updated: {{ formatDate createdOn }}</span>
 </div>
 </div>
 </template>
-
 <!-- <div class="container">
-<div class="progress" style="height: 20px;background-color: rgba(255,0,0,0.1);">
-			<div class="progress-bar progress-bar-danger" role="progressbar"
-						aria-valuemin="0" aria-valuemax="100" style="width:{{percen}}%">
-							{{percen}}%
-			</div>
-</div>
+	<div class="progress" style="height: 20px;background-color: rgba(255,0,0,0.1);">
+							<div class="progress-bar progress-bar-danger" role="progressbar"
+															aria-valuemin="0" aria-valuemax="100" style="width:{{percen}}%">
+																{{percen}}%
+							</div>
+	</div>
 </div> -->

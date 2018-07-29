@@ -1,8 +1,12 @@
+div.a {
+    font-size: 50px;
+}
+
 .ratings {
     position: relative;
     vertical-align: middle;
     display: inline-block;
-    color: black;
+    color: white;
     overflow: hidden;
   }
   
@@ -12,7 +16,7 @@
     top: 0;
     white-space: nowrap;
     overflow: hidden;
-    color: orange;
+    color: #f56a6a;
   }
   
   .empty-stars:before,
@@ -22,18 +26,19 @@
   }
   
   .empty-stars:before {
-    -webkit-text-stroke: 1px #848484;
+    -webkit-text-stroke: 3px #f56a6a;
   }
   
   .full-stars:before {
-    -webkit-text-stroke: 1px orange;
+    -webkit-text-stroke: 1px #f56a6a;
   }
-  
+
+
   /* Webkit-text-stroke is not supported on firefox or IE */
   /* Firefox */
   @-moz-document url-prefix() {
     .full-stars{
-      color: #ECBE24;
+      color: #f56a6a;
     }
   }
 

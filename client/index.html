@@ -2,24 +2,20 @@
 	<title>YumzNUS</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
 </head>
-
 <body>
 </body>
-
 <template name="scrollup">
-		<a id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+<a id="return-to-top"><i class="fa fa-chevron-up"></i></a>
 </template>
-
 <template name="scrolldown">
-		<a id="return-to-bot"><i class="fa fa-chevron-down"></i></a>
+<a id="return-to-bot"><i class="fa fa-chevron-down"></i></a>
 </template>
-
 <template name="home">
 <body class="is-preload">
 	{{> scrollup}}
 	{{> scrolldown}}
-
 	<!-- Wrapper -->
 	<div id="wrapper">
 		<!-- Main -->
@@ -27,8 +23,8 @@
 			<div class="inner">
 				<!-- Header -->
 				<header id="header">
-					<a href="{{pathFor route='home'}}" class="logo"><strong>YumzNUS</strong> by Joel & Wei Qi</a> 
-					<span style="color:black">{{time}}</span>
+					<a href="{{pathFor route='home'}}" class="logo"><strong>YumzNUS</strong> by Joel & Wei Qi</a>
+					<span style="color: #7f888f">{{time}}</span>
 					<ul class="icons">
 						<li><a href="https://twitter.com/login?lang=en" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
 						<li><a href="https://www.facebook.com" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
@@ -42,11 +38,11 @@
 					<div class="content">
 						<header>
 							<h1>YumzNUS</h1>
-
 							<p>
+								<br>
 								A
 								<strong>One Stop Platform</strong> for food advice
-								<span class="glyphicon glyphicon-cutlery">
+								<span class="fa fa-commenting">
 								</span>
 							</p>
 						</header>
@@ -72,8 +68,23 @@
 					<header class="major">
 						<h2 id="Recommended">Did You Know? <span class="#"></span></h2>
 					</header>
-				</section>
+					<div class="row">
+												
+											<div class="col-4 col-12-medium">
+												<h3>hello1</h3>
+												<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit.</p>
+											</div>
+											<div class="col-4 col-12-medium">
+												<h3>Faucibus consequat lorem</h3>
+												<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit.</p>
+											</div>
+											<div class="col-4 col-12-medium">
+												<h3>Accumsan montes viverra</h3>
+												<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit.</p>
+											</div>
+					</div>
 
+				</section>
 				<!-- Section -->
 				<section>
 					<header class="major">
@@ -86,7 +97,7 @@
 				<!-- Section -->
 				<section>
 					<header class="major">
-						<h2 id="canteen">Food Canteens <span class="glyphicon glyphicon-cutlery"></span></h2>
+						<h2 id="canteen">Food Canteens <span class="glyphicon glyphicon-home"></span></h2>
 					</header>
 					<div class="posts">
 						<article>
@@ -161,17 +172,16 @@
 					<header class="major">
 						<h2>Menu</h2>
 					</header>
-
 					<ul>
 						
 						<li><a href="{{pathFor route='home'}}">Homepage</a></li>
 						{{#if currentUser}}
 						<li>{{> signout}}</li>
 						{{else}}
-						<li><a href="{{pathFor route='login'}}">Login/Sign Up <i class="fa fa-key fa-fw"></i></a>
+						<li><a href="{{pathFor route='login'}}">Login/Sign Up </a>
 					</li>
 					{{/if}}
-					<li><a href="{{pathFor route='vote_list'}}">Vote a Stall <i class="fa fa-thumbs-up" aria-hidden="true"></i></a></li>
+					<li><a href="{{pathFor route='vote_list'}}">Vote a Stall </a></li>
 					<li>
 						<a href="#" data-toggle="popover" title="List of Canteens" data-content="
 							<a href='{{pathFor route='ffList'}}' >FineFood@UTown</a>
@@ -219,20 +229,17 @@
 				<div class="mini-posts">
 					<article>
 						<a href="#" class="image"><img src="images/cafe.jpg" alt="" /></a>
-						<p>Cafes</p>
+						<p></p>
 					</article>
 					<article>
 						<a href="#" class="image"><img src="images/canteen.jpg" alt="" /></a>
-						<p>Canteens</p>
+						<p></p>
 					</article>
 					<article>
 						<a href="#" class="image"><img src="images/restaurant.jpg" alt="" /></a>
-						<p>Restaurants</p>
+						<p></p>
 					</article>
 				</div>
-				<ul class="actions">
-					<li><a href="http://www.nus.edu.sg" class="button">More</a></li>
-				</ul>
 			</section>
 			<!-- Section -->
 			<section>
@@ -247,16 +254,13 @@
 						21 Lower Kent Ridge Road<br/>
 						Singapore 119077<br />
 					</li>
-
 				</ul>
 
 			</section>
-
 		</div>
 	</div>
 </div>
 <!-- Scripts -->
-
 <script>
 	// Select all links with hashes
 	$('a[href*="#"]')
@@ -291,7 +295,6 @@
 		}
 		}
 	});
-
 </script>
 </body>
 </template>
@@ -299,20 +302,14 @@
 <template name="recommended">
 {{#each items}}
 <article>
-<span class="icon fa-diamond"></span>
-<div class="content">
-	<h3>{{title}} {{star_sum}}</h3>
-	<p>{{location}}</p>
+
+<div class="chip">
+  <img src="/images/fork.jpg" alt="Person" width="96" height="96">
+<nobr style="font-size:40px;"></nobr>
+  	<strong>{{star_sum}} Stars </strong><br>
+	{{title}} at {{location}}
 </div>
+
 </article>
 {{/each}}
 </template>
-
-
-
-
-
-
-
-
-
