@@ -2,6 +2,7 @@ Template.registerHelper('formatDate', function(date) {
   return moment(date).format('MMMM Do, YYYY [at] hh:mm a');
 });
 
+
 Template.register.events({
   'submit form': function(event){
       event.preventDefault();

@@ -204,7 +204,6 @@ Template.vote_list.helpers({
         total_count: function() {
             var arr = new Array();
             var count_list = Votes.find().fetch();
-            console.log(count_list[16].location);
             for (i = 0; i < Votes.find().count(); i++) {
                 arr.push(count_list[i].count);
             }

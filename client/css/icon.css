@@ -1,0 +1,19 @@
+.faico{margin:0; padding:0; list-style:none;}
+.faico li{display:inline-block; margin:8px 5px 0 0; padding:0; line-height:normal;}
+.faico li:last-child{margin-right:0;}
+.faico a{display:inline-block; width:36px; height:36px; line-height:36px; font-size:18px; text-align:center;}
+
+.faico a{color:#FFFFFF; background-color:#4E4E4E;}
+.faico a:hover{}
+
+.faicon-dribble:hover{background-color:#EA4C89;}
+.faicon-facebook:hover{background-color:#3B5998;}
+.faicon-google-plus:hover{background-color:#DB4A39;}
+.faicon-linkedin:hover{background-color:#0E76A8;}
+.faicon-twitter:hover{background-color:#00ACEE;}
+.faicon-vk:hover{background-color:#4E658E;}
+
+#footer .faico{margin-bottom:30px;}
+.faico a{border-radius:10px; background-clip:padding-box;}
+
+

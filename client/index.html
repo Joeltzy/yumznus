@@ -24,33 +24,29 @@
 				<!-- Header -->
 				<header id="header">
 					<a href="{{pathFor route='home'}}" class="logo"><strong>YumzNUS</strong> by Joel & Wei Qi</a>
-					<span style="color: #7f888f">{{time}}</span>
-					<ul class="icons">
-						<li><a href="https://twitter.com/login?lang=en" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="https://www.facebook.com" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-						<li><a href="https://www.snapchat.com" class="icon fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
-						<li><a href="https://www.instagram.com/?hl=en" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-						<li><a href="http://www.nus.edu.sg" class="icon fa-medium"><span class="label">Medium</span></a></li>
-					</ul>
+					<ul class="icons"><span class="glyphicon glyphicon-time" style="color= black;"> </span><span style="color: #7f888f">        {{time}} </span></ul>
 				</header>
 				<!-- Banner -->
+
 				<section id="banner">
 					<div class="content">
 						<header>
 							<h1>YumzNUS</h1>
 							<p>
-								<br>
-								A
-								<strong>One Stop Platform</strong> for food advice
+								
+								MORE THAN <u><strong style="font-size:16px;">Just</strong></u> A BLOG.
+								ITS A<strong style="font-size:16px;"> <u>LIFESTYLE</u></strong>
+								<!-- <strong>One Stop Platform</strong> for food advice -->
 								<span class="fa fa-commenting">
 								</span>
+								
 							</p>
 						</header>
 						
-						<p>If you find yourself needing food advice on NUS campus, you came to the right place! YumzNUS provides you with
-							many food reviews about the different types of <a href="#canteen"><strong>Food Canteens</strong></a> around NUS.
+						<p style="text-align:justify">If you find yourself needing food advice on NUS campus, you came to the right place! YumzNUS provides you with
+							many food reviews about the different types of <a href="#canteen"><strong style="font-size:17px;">Food Canteens</strong></a> around NUS.
 						</p>
-						<p>
+						<p style="text-align:justify">
 							The <a href="#Recommended"><strong>Recommended</strong></a> section also outputs the TOP 4 food stalls which were voted by visitors of the website. Do give
 							these food stalls a visit!
 						</p>
@@ -66,23 +62,9 @@
 				<!-- Section -->
 				<section>
 					<header class="major">
-						<h2 id="Recommended">Did You Know? <span class="#"></span></h2>
+						<h2 id="Recommended">Food Statistics</h2>
 					</header>
-					<div class="row">
-												
-											<div class="col-4 col-12-medium">
-												<h3>hello1</h3>
-												<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit.</p>
-											</div>
-											<div class="col-4 col-12-medium">
-												<h3>Faucibus consequat lorem</h3>
-												<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit.</p>
-											</div>
-											<div class="col-4 col-12-medium">
-												<h3>Accumsan montes viverra</h3>
-												<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit.</p>
-											</div>
-					</div>
+					{{> stats}}
 
 				</section>
 				<!-- Section -->
@@ -174,6 +156,7 @@
 					</header>
 					<ul>
 						
+						
 						<li><a href="{{pathFor route='home'}}">Homepage</a></li>
 						{{#if currentUser}}
 						<li>{{> signout}}</li>
@@ -255,8 +238,19 @@
 						Singapore 119077<br />
 					</li>
 				</ul>
-
+				<hr>
+				<div class="center btmspace-50">
+					<ul class="faico clear">
+						<li><a class="faicon-facebook" href="#"><i style="color: white;" class="fa fa-facebook"></i></a></li>
+						<li><a class="faicon-twitter" href="#"><i style="color: white;" class="fa fa-twitter"></i></a></li>
+						<li><a class="faicon-dribble" href="#"><i style="color: white;" class="fa fa-dribbble"></i></a></li>
+						<li><a class="faicon-linkedin" href="#"><i style="color: white;" class="fa fa-linkedin"></i></a></li>
+						<li><a class="faicon-google-plus" href="#"><i style="color: white;" class="fa fa-google-plus"></i></a></li>
+						<li><a class="faicon-vk" href="#"><i style="color: white;" class="fa fa-vk"></i></a></li>
+					</ul>
+				</div>
 			</section>
+			<hr>
 		</div>
 	</div>
 </div>
@@ -302,14 +296,12 @@
 <template name="recommended">
 {{#each items}}
 <article>
-
 <div class="chip">
-  <img src="/images/fork.jpg" alt="Person" width="96" height="96">
-<nobr style="font-size:40px;"></nobr>
-  	<strong>{{star_sum}} Stars </strong><br>
+	<img src="/images/fork.jpg" alt="Person" width="96" height="96">
+	<nobr style="font-size:40px;"></nobr>
+	<strong>{{star_sum}}/5 <span class="glyphicon glyphicon-star"></span> </strong><br>
 	{{title}} at {{location}}
 </div>
-
 </article>
 {{/each}}
 </template>
