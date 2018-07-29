@@ -39,7 +39,7 @@
 								<!-- <strong>One Stop Platform</strong> for food advice -->
 								<span class="fa fa-commenting">
 								</span>
-								
+
 							</p>
 						</header>
 						
@@ -155,8 +155,6 @@
 						<h2>Menu</h2>
 					</header>
 					<ul>
-						
-						
 						<li><a href="{{pathFor route='home'}}">Homepage</a></li>
 						{{#if currentUser}}
 						<li>{{> signout}}</li>
@@ -291,17 +289,4 @@
 	});
 </script>
 </body>
-</template>
-<!-- Recommended template to output top 4 food items -->
-<template name="recommended">
-{{#each items}}
-<article>
-<div class="chip">
-	<img src="/images/fork.jpg" alt="Person" width="96" height="96">
-	<nobr style="font-size:40px;"></nobr>
-	<strong>{{star_sum}}/5 <span class="glyphicon glyphicon-star"></span> </strong><br>
-	{{title}} at {{location}}
-</div>
-</article>
-{{/each}}
 </template>
