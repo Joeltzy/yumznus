@@ -82,7 +82,6 @@
                         <form class="deckSubmitForm">
                             <p> </p>
                             <p><strong>Review Title:</strong><input type="text" id="postTitle" name="postTitle" placeholder="Title" required/></p>
-                            <!-- <p>Post:<input type="text" id="post" name="post"/></p> -->
                             <strong>Review Content:</strong><textarea type="text" id="post" name="post" placeholder="Please Write a Review" required></textarea>
                             <p></p>
                             <input type="submit" value="Submit"/>
@@ -125,17 +124,20 @@
                         <a href="{{pathFor route='home'}}"><button type="button" class="btn">Homepage</button></a>
                         
                         <button type="button" class="btn" data-toggle="collapse" data-target="#decklo">Location</button>
+
                         <div id="decklo" class="collapse">
                             {{> deckdes}}
                         </div>
                         
                         {{#if currentUser}}
                         <a href="/deckSubmit"><button type="button" class="btn">Write a Review</button></a>
+                        <br><br> <span class="image main"><img src="/images/homepage/The Deck.jpg" alt="" /></span>
                         {{#each deckrev}}
                         {{> deckItem}}
                         {{/each}}
                         {{else}}
                         <p></p>
+                        
                         <span style="color: black; font-size:16px;">
                             To Write a <strong>Review</strong> or Post a <strong>Comment</strong>,
                             You will have to sign in!
