@@ -3,7 +3,7 @@ setInterval(function (){
   Meteor.call("getServerTime", function (error, result){
     Session.set("time", result);
   });
-}, 1000);
+}, 500);
 
 
 // Get Time
@@ -12,3 +12,7 @@ Template.home.helpers({
     return Session.get("time");
   }
 })
+
+Template.registerHelper('formatDate', function(date) {
+  return moment(date).format('MMMM Do, YYYY [at] hh:mm a');
+});
