@@ -13,7 +13,7 @@
 				</header>
 				<!-- Content -->
 				<section>
-					<header class="main">
+					<header class="">
 						<h1>Voting Section</h1>
 						{{#if currentUser}}
 						<!-- Table -->
@@ -32,20 +32,6 @@
 									<tr>
 										<td>University Town</td>
 										<td>
-											<!-- University Town Fine Food Data -->
-											<button type="button" class="btn" data-toggle="collapse" data-target="#ffsort">Fine Food</button><br>
-											<div id="ffsort" class="collapse">
-												<p></p>
-												{{#each sortff}}
-												<p>{{>vote_item}}</p>
-												{{/each}}
-											</div>
-										</td>
-										<td>{{ff_count}}</td>
-									</tr>
-									<tr>
-										<td>University Town</td>
-										<td>
 											<!-- University Town Food Clique Data -->
 											<button type="button" class="btn" data-toggle="collapse" data-target="#fcsort">Food Clique</button><br>
 											<div id="fcsort" class="collapse">
@@ -56,6 +42,20 @@
 											</div>
 										</td>
 										<td>{{fc_count}}</td>
+									</tr>
+									<tr>
+										<td>University Town</td>
+										<td>
+											<!-- University Town Fine Food Data -->
+											<button type="button" class="btn" data-toggle="collapse" data-target="#ffsort">Fine Food</button><br>
+											<div id="ffsort" class="collapse">
+												<p></p>
+												{{#each sortff}}
+												{{>vote_item}}
+												{{/each}}
+											</div>
+										</td>
+										<td>{{ff_count}}</td>
 									</tr>
 									<tr>
 										<td>Faculty of Science</td>
@@ -110,7 +110,17 @@
 						</table>
 					</div>
 					{{else}}
-					Please <a href="{{pathFor route='login'}}" class="major">Sign In</a> to Vote.
+					<span style="color: black; font-size:16px;">			
+						To continue Viewing and Voting our Food Stalls,
+						You will have to sign in!
+						<br><br>
+						Click <strong><a href="{{pathFor route='login'}}">LOGIN</a></strong> to Sign In if you are an existing user 
+						<u>OR</u>
+						<br>
+						Click <strong><a href="{{pathFor route='register'}}">REGISTER</a></strong> to Register for a free account!
+						<br><br>
+						Thank you for using our services!
+					</span>
 					{{/if}}
 				</header>
 				
@@ -121,6 +131,8 @@
 </div>
 <!-- Scripts -->
 </div>
+
+
 </template>
 <template name="vote_item">
 <div class="panel panel-default">
@@ -165,8 +177,8 @@
 <!-- <div class="container">
 	<div class="progress" style="height: 20px;background-color: rgba(255,0,0,0.1);">
 							<div class="progress-bar progress-bar-danger" role="progressbar"
-															aria-valuemin="0" aria-valuemax="100" style="width:{{percen}}%">
-																{{percen}}%
+																aria-valuemin="0" aria-valuemax="100" style="width:{{percen}}%">
+																	{{percen}}%
 							</div>
 	</div>
 </div> -->

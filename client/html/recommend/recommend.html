@@ -5,8 +5,13 @@
 <div class="chip">
 	<img src="/images/fork.jpg" alt="Person" width="96" height="96">
 	<nobr style="font-size:40px;"></nobr>
-	<strong>{{star_sum}}/5 <span class="glyphicon glyphicon-star"></span> </strong><br>
-	{{title}} at {{location}}
+	<strong style="font-size:26px;font-family: Times New Roman ;">{{star_sum}} </strong>
+	<div class="ratings">
+		<div class="empty-stars"></div>
+		<div class="full-stars" style="width:{{percen}}%"></div>
+	</div>
+		<br>
+	<span>{{title}} at {{location}}</span>
 </div>
 </article>
 {{/each}}

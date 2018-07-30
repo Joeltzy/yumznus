@@ -1,158 +1,166 @@
 <template name="frcommentItem">
-        {{body}}
-    </template>
-    
-<template name="frcommentSubmit">
-    {{> scrollup}}
-    {{> scrolldown}}
-        <form name="comment" >
-            {{#if currentUser}}
-                <input name="body" id="body" required>
-                <input type="submit" value="Add comment">
-            {{else}}
-                Please 
-                <a href="{{pathFor route='login'}}" class="major">Sign In</a> to POST a Comment.<br/>
-            {{/if}}
-        </form>
-        <a href="{{pathFor route='frList'}}"><button type="button" class="btn">Back</button></a>
-    </template>
-    
-    <template name="frItem">
-        <hr class="major" />
-        <h2>{{postTitle}}</h2>
-        <p>{{post}}</p>
-    
-                {{#if currentUser}}
-                    <a class="btn" href="{{pathFor 'frPage'}}">{{commentsCount}} comments</a> {{formatDate submitted}}
-                    <a class="btn pull-right btn-small no" ><i class="fa fa-chevron-down"></i></a>
-                    <a class="btn pull-right"> {{score}} </a>
-                    <a class="btn pull-right btn-small yes"><i class="fa fa-chevron-up"></i></a>
-                {{else}}
-                    <a class="btn" href="{{pathFor 'frPage'}}">{{commentsCount}} comments</a> {{formatDate submitted}}
-                    <a class="btn pull-right btn-small" href="{{pathFor 'accounts'}}"><i class="fa fa-chevron-down"></i></a>
-                    <a class="btn pull-right"> {{score}} </a>
-                    <a class="btn pull-right btn-small" href="{{pathFor 'accounts'}}"><i class="fa fa-chevron-up"></i></a>
-                {{/if}}
-    
-    </template>
-    
-      <template name = "frPage">
-          <div class="container">
-          {{> frItem}}
-          {{#each frcomments}}
-              <div class="dialogbox">
-                  <div class="body">
-                      <div class="message">
-                                <p>{{> frcommentItem}}</p>
-                                {{formatDate submitted}}
-                        </div>		
-                  </div>
-              </div>
-            {{/each}}
-            {{> frcommentSubmit}}
-          </div>
-        </template>
-    
-            
-    
-    <template name="frSubmit">
-    {{> scrollup}}
-    {{> scrolldown}}
-            <div class="is-preload">
-        
-                <!-- Wrapper -->
-                    <div id="wrapper">
-        
-                        <!-- Main -->
-                            <div id="main">
-                                <div class="inner">
-        
-                                    <!-- Header -->
-                                        <header id="header">
-                                                <a href="{{pathFor route='home'}}" class="logo"><strong>YumzNUS</strong> by Joel & Wei Qi</a>
-                                        </header>
-        
-                                    <!-- Content -->
-                                        <section>
-                                            <header class="main">
-                                                <h1>Faculty of Science - Frontier </h1>
-                                            </header>
-    
-                                            <div class="frSubmit">
-                                                <form class="frSubmitForm">
-                                                            <p> </p>
-                                                            <p><strong>Review Title:</strong><input type="text" id="postTitle" name="postTitle" placeholder="Title" required/></p>
-                                                            <!-- <p>Post:<input type="text" id="post" name="post"/></p> -->
-                                                            <strong>Review Content:</strong><textarea type="text" id="post" name="post" placeholder="Please Write a Review" required></textarea>
-                                                            <p></p>
-                                                            <input type="submit" value="Submit"/>
-                                                </form>
-                                                <a href="{{pathFor route='home'}}"><button type="button" class="btn">Homepage</button></a>
-                                                <a href="{{pathFor route='frList'}}"><button type="button" class="btn">Back</button></a>
-                                            </div> 	
-                                        </section>
-        
-                                </div>
-                            </div>
-                    </div>
-                    </div>
-        </template>
-    
-    
-    
-    <template name="frList">
-    {{> scrollup}}
-    {{> scrolldown}}
-        <div class="is-preload">
-    
-            <!-- Wrapper -->
-                <div id="wrapper">
-    
-                    <!-- Main -->
-                        <div id="main">
-                            <div class="inner">
-    
-                                <!-- Header -->
-                                    <header id="header">
-                                            <a href="{{pathFor route='home'}}" class="logo"><strong>YumzNUS</strong> by Joel & Wei Qi</a>
-                                    </header>
-    
-                                <!-- Content -->
-                                    <section>
-                                        <header class="main">
-                                            <h1>Faculty of Science - Frontier </h1>
-                                
-                                            <a href="{{pathFor route='home'}}"><button type="button" class="btn">Homepage</button></a>
-                                        
-                                            <button type="button" class="btn" data-toggle="collapse" data-target="#frlo">Location</button>
-                                                <div id="frlo" class="collapse">
-                                                    {{> frdes}}
-                                                </div>
-                                             
-                                            {{#if currentUser}}
-                                                <a href="/frSubmit"><button type="button" class="btn">Write a Review</button></a>
-                                            {{else}}
-                                             <p></p>
-                                                Please <a href="{{pathFor route='login'}}" class="major">Sign In</a> to POST a Review<br/>
-                                            {{/if}}
-                                        </header>
-                                        
-                                <!-- Uncomment below for a large picture -->
-                                       <br> <span class="image main"><img src="images/123.jpg" alt="" /></span>
-                                        
-                                        {{#each frrev}}
-                                            {{> frItem}}
-                                        {{/each}}
-                                    </section>
-    
-                            </div>
-                        </div>
-                </div>
+{{body}}
+</template>
 
+<template name="frcommentSubmit">
+{{> scrollup}}
+{{> scrolldown}}
+<form name="comment" >
+    {{#if currentUser}}
+    <input name="body" id="body" required>
+    <input type="submit" value="Add comment">
+    {{else}}
+    Please
+    <a href="{{pathFor route='login'}}" class="major">Sign In</a> to POST a Comment.<br/>
+    {{/if}}
+</form>
+<a href="{{pathFor route='frList'}}"><button type="button" class="btn">Back</button></a>
+</template>
+
+<template name="frItem">
+<hr class="major" />
+<h2>{{postTitle}}</h2>
+<p>{{post}}</p>
+
+{{#if currentUser}}
+<a class="btn" href="{{pathFor 'frPage'}}">{{commentsCount}} comments</a> {{formatDate submitted}}
+<a class="btn pull-right btn-small no" ><i class="fa fa-chevron-down"></i></a>
+<a class="btn pull-right"> {{score}} </a>
+<a class="btn pull-right btn-small yes"><i class="fa fa-chevron-up"></i></a>
+{{else}}
+<a class="btn" href="{{pathFor 'frPage'}}">{{commentsCount}} comments</a> {{formatDate submitted}}
+<a class="btn pull-right btn-small" href="{{pathFor 'accounts'}}"><i class="fa fa-chevron-down"></i></a>
+<a class="btn pull-right"> {{score}} </a>
+<a class="btn pull-right btn-small" href="{{pathFor 'accounts'}}"><i class="fa fa-chevron-up"></i></a>
+{{/if}}
+
+</template>
+
+<template name = "frPage">
+<div class="container">
+    {{> frItem}}
+    {{#each frcomments}}
+    <div class="dialogbox">
+        <div class="body">
+            <div class="message">
+                <p>{{> frcommentItem}}</p>
+                {{formatDate submitted}}
+            </div>
         </div>
-    </template>
+    </div>
+    {{/each}}
+    {{> frcommentSubmit}}
+</div>
+</template>
+
+
+
+<template name="frSubmit">
+{{> scrollup}}
+{{> scrolldown}}
+<div class="is-preload">
     
-    <template name="frdes">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d680.7138205900133!2d103.78042614053192!3d1.2965804874273676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da1a50d2a84f95%3A0x10368845ce4e2bb0!2sNUS+Science+Canteen+(Frontier+Phase+1)!5e0!3m2!1sen!2ssg!4v1531372999889" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-    </template>
+    <!-- Wrapper -->
+    <div id="wrapper">
+        
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+                
+                <!-- Header -->
+                <header id="header">
+                    <a href="{{pathFor route='home'}}" class="logo"><strong>YumzNUS</strong> by Joel & Wei Qi</a>
+                </header>
+                
+                <!-- Content -->
+                <section>
+                    <header class="main">
+                        <h1>Faculty of Science - Frontier </h1>
+                    </header>
+                    
+                    <div class="frSubmit">
+                        <form class="frSubmitForm">
+                            <p> </p>
+                            <p><strong>Review Title:</strong><input type="text" id="postTitle" name="postTitle" placeholder="Title" required/></p>
+                            <!-- <p>Post:<input type="text" id="post" name="post"/></p> -->
+                            <strong>Review Content:</strong><textarea type="text" id="post" name="post" placeholder="Please Write a Review" required></textarea>
+                            <p></p>
+                            <input type="submit" value="Submit"/>
+                        </form>
+                        <a href="{{pathFor route='home'}}"><button type="button" class="btn">Homepage</button></a>
+                        <a href="{{pathFor route='frList'}}"><button type="button" class="btn">Back</button></a>
+                    </div>
+                </section>
+                
+            </div>
+        </div>
+    </div>
+</div>
+</template>
+
+
+
+<template name="frList">
+{{> scrollup}}
+{{> scrolldown}}
+<div class="is-preload">
     
+    <!-- Wrapper -->
+    <div id="wrapper">
+        
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+                
+                <!-- Header -->
+                <header id="header">
+                    <a href="{{pathFor route='home'}}" class="logo"><strong>YumzNUS</strong> by Joel & Wei Qi</a>
+                </header>
+                
+                <!-- Content -->
+                <section>
+                    <header class="main">
+                        <h1>Faculty of Science - Frontier </h1>
+                        
+                        <a href="{{pathFor route='home'}}"><button type="button" class="btn">Homepage</button></a>
+                        
+                        <button type="button" class="btn" data-toggle="collapse" data-target="#frlo">Location</button>
+                        <div id="frlo" class="collapse">
+                            {{> frdes}}
+                        </div>
+                        
+                        {{#if currentUser}}
+                        <a href="/frSubmit"><button type="button" class="btn">Write a Review</button></a>
+                        {{#each frrev}}
+                        {{> frItem}}
+                        {{/each}}
+                        {{else}}
+                        <p></p>
+                        <span style="color: black; font-size:16px;">
+                            To Write a <strong>Review</strong> or Post a <strong>Comment</strong>,
+                            You will have to sign in!
+                            <br><br>
+                            Click <strong><a href="{{pathFor route='login'}}">LOGIN</a></strong> to Sign In if you are an existing user
+                            <u>OR</u>
+                            <br>
+                            Click <strong><a href="{{pathFor route='register'}}">REGISTER</a></strong> to Register for a free account!
+                            <br><br>
+                            Thank you for using our services!
+                        </span>
+                        {{/if}}
+                    </header>
+                    
+                    <!-- Uncomment below for a large picture -->
+                    <br> <span class="image main"><img src="images/123.jpg" alt="" /></span>
+                    
+                </section>
+                
+            </div>
+        </div>
+    </div>
+</div>
+</template>
+
+<template name="frdes">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d680.7138205900133!2d103.78042614053192!3d1.2965804874273676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da1a50d2a84f95%3A0x10368845ce4e2bb0!2sNUS+Science+Canteen+(Frontier+Phase+1)!5e0!3m2!1sen!2ssg!4v1531372999889" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+</template>
