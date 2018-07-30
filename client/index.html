@@ -6,7 +6,6 @@
 </head>
 <body>
 </body>
-
 <template name="home">
 <body class="is-resizing">
 	{{> scrollup}}
@@ -22,19 +21,16 @@
 					<ul class="icons"><span class="glyphicon glyphicon-time" style="color= black;"> </span><span style="color: #7f888f">        {{time}} </span></ul>
 				</header>
 				<!-- Banner -->
-
 				<section id="banner">
 					<div class="content">
 						<header>
 							<h1>YumzNUS</h1>
-							<p>
-								
+							<p>	
 								MORE THAN <u><strong style="font-size:16px;">Just</strong></u> A BLOG.
 								ITS A<strong style="font-size:16px;"> <u>LIFESTYLE</u></strong>
 								<!-- <strong>One Stop Platform</strong> for food advice -->
 								<span class="fa fa-commenting">
 								</span>
-
 							</p>
 						</header>
 						
@@ -60,7 +56,6 @@
 						<h2 id="stat">Food Statistics</h2>
 					</header>
 					{{> stats}}
-
 				</section>
 				<!-- Section -->
 				<section>
@@ -71,68 +66,8 @@
 						{{> recommended}}
 					</div>
 				</section>
-				<!-- Section -->
-				<section>
-					<header class="major">
-						<h2 id="canteen">Food Canteens <span class="glyphicon glyphicon-home"></span></h2>
-					</header>
-					<div class="posts">
-						<article>
-							<a href="#" class="image"><img src="images/mala.jpg" alt="mala" /></a>
-							<h3>University Town (Fine Food)</h3>
-							<p><strong>Address:</strong> National University of Singapore, Create Way, Town Plaza, 138602</p>
-							<p><strong>Opening Hours:</strong> Open daily from 7:00am to 10:00pm</p>
-							<ul class="actions">
-								<li><a href="{{pathFor route='ffList'}}" class="button">More</a></li>
-							</ul>
-						</article>
-						<article>
-							<a href="#" class="image"><img src="images/astons.jpg" alt="astons" /></a>
-							<h3>University Town (Food Clique)</h3>
-							<p><strong>Address:</strong>  2 College Avenue West, Level 2 Stephen Riady Centre, 138607</p>
-							<p><strong>Opening Hours:</strong> Open daily from 7:30am to 9:30pm</p>
-							<ul class="actions">
-								<li><a href="{{pathFor route='fcList'}}" class="button">More</a></li>
-							</ul>
-						</article>
-						<article>
-							<a href="#" class="image"><img src="images/tea party.jpg" alt="" /></a>
-							<h3>University Sports Centre (Tea Party)</h3>
-							<p><strong>Address:</strong>  National University of Singapore, 2 Sports Drive 1, #03-03, 117561</p>
-							<p><strong>Opening Hours:</strong> Opens from 10:30am to 10:30pm, Closes on Sunday</p>
-							<ul class="actions">
-								<li><a href="{{pathFor route='tpList'}}" class="button">More</a></li>
-							</ul>
-						</article>
-						<article>
-							<a href="#" class="image"><img src="images/curry noodle.jpg" alt="" /></a>
-							<h3>Faculty of Arts & Social Science (The Deck)</h3>
-							<p><strong>Address:</strong>  National University of Singapore, 5 Arts Link, Singapore 117570</p>
-							<p><strong>Opening Hours:</strong> Open on Weekdays from 8:00am to 7:00pm, Saturday from 10:30am to 3:00pm, Closes on Sunday</p>
-							<ul class="actions">
-								<li><a href="{{pathFor route='deckList'}}" class="button">More</a></li>
-							</ul>
-						</article>
-						<article>
-							<a href="#" class="image"><img src="images/chick rice.jpg" alt="" /></a>
-							<h3>Faculty of Science (Frontier)</h3>
-							<p><strong>Address:</strong>  National University of Singapore, 12 Science Drive 2, Singapore 117549</p>
-							<p><strong>Opening Hours:</strong> Open on Weekdays from 8:00am to 7:00pm, Closes on Weekends</p>
-							<ul class="actions">
-								<li><a href="{{pathFor route='frList'}}" class="button">More</a></li>
-							</ul>
-						</article>
-						<article>
-							<a href="#" class="image"><img src="images/ayam penyet.jpg" alt="" /></a>
-							<h3>Faculty of Science (Air-con Canteen)</h3>
-							<p><strong>Address:</strong>  National University of Singapore, 12 Science Drive 2, Singapore 117549</p>
-							<p><strong>Opening Hours:</strong> Open on Weekdays from 8:00am to 7:00pm, Closes on Weekends</p>
-							<ul class="actions">
-								<li><a href="{{pathFor route='acList'}}" class="button">More</a></li>
-							</ul>
-						</article>
-					</div>
-				</section>
+				<!-- foodstalls -->
+				{{> foodstalls}}
 			</div>
 		</div>
 		<!-- Sidebar -->
@@ -155,104 +90,35 @@
 						<li>{{> signout}}</li>
 						{{else}}
 						<li><a href="{{pathFor route='login'}}">Login/Sign Up </a>
+						
 					</li>
 					{{/if}}
 					<li><a href="{{pathFor route='vote_list'}}">Vote a Stall </a></li>
+					<li><a href="#utown">University Town</a></li>
 					<li>
-						<a href="#" data-toggle="popover" title="List of Canteens" data-content="
-							<a href='{{pathFor route='ffList'}}' >FineFood@UTown</a>
-							<a href='{{pathFor route='fcList'}}' >FoodClique@UTown</a>
-							"
-						>University Town</a>
-						
-						
-						<script>
-						$(document).ready(function(){
-							$('[data-toggle="popover"]').popover({html:true});
-							
-						});
-						</script>
+						<a href="#fos">Faculty of Science</a>
 					</li>
 					<li>
-						<a href="#" data-toggle="popover" title="List of Canteens" data-content="
-							<a href='{{pathFor route='frList'}}' >Frontier@ScienceFac</a>
-							<a href='{{pathFor route='acList'}}' >Air-con@ScienceFac</a>
-							"
-						>Faculty of Science</a>
-						
-						
+						<a href="#usc">Unviersity Sports Centre</a>
 					</li>
 					<li>
-						<a href="#" data-toggle="popover" title="List of Canteens" data-content="
-							<a href='{{pathFor route='tpList'}}' >TeaParty@SportsCentre</a>
-							"
-						>Unviersity Sports Centre</a>
-					</li>
-					<li>
-						<a href="#" data-toggle="popover" title="List of Canteens" data-content="
-							<a href='{{pathFor route='deckList'}}' >Deck@ArtsFaculty</a>
-							"
-						>Faculty of Arts</a>
+						<a href="#fass">Faculty of Arts</a>
 					</li>
 					
 				</ul>
 			</nav>
-			<!-- Section -->
-			<section>
-				<header class="major">
-					<h2>Dining Experience in NUS</h2>
-				</header>
-				<div class="mini-posts">
-					<article>
-						<a href="#" class="image"><img src="images/cafe.jpg" alt="" /></a>
-						<p></p>
-					</article>
-					<article>
-						<a href="#" class="image"><img src="images/canteen.jpg" alt="" /></a>
-						<p></p>
-					</article>
-					<article>
-						<a href="#" class="image"><img src="images/restaurant.jpg" alt="" /></a>
-						<p></p>
-					</article>
-				</div>
-			</section>
-			<!-- Section -->
-			<section>
-				<header class="major">
-					<h2>Get in touch</h2>
-				</header>
-				<h4><p>NUS Contact Details</p></h4>
-				<ul class="contact">
-					<li class="fa-envelope-o"><a href="#">ohrsharedservices@nus.edu.sg</a></li>
-					<li class="fa-phone">+65 6516 6666</li>
-					<li class="fa-home">National University of Singapore<br/>
-						21 Lower Kent Ridge Road<br/>
-						Singapore 119077<br />
-					</li>
-				</ul>
-				<hr>
-				<div class="center btmspace-50">
-					<ul class="faico clear">
-						<li><a class="faicon-facebook" href="#"><i style="color: white;" class="fa fa-facebook"></i></a></li>
-						<li><a class="faicon-twitter" href="#"><i style="color: white;" class="fa fa-twitter"></i></a></li>
-						<li><a class="faicon-dribble" href="#"><i style="color: white;" class="fa fa-dribbble"></i></a></li>
-						<li><a class="faicon-linkedin" href="#"><i style="color: white;" class="fa fa-linkedin"></i></a></li>
-						<li><a class="faicon-google-plus" href="#"><i style="color: white;" class="fa fa-google-plus"></i></a></li>
-						<li><a class="faicon-vk" href="#"><i style="color: white;" class="fa fa-vk"></i></a></li>
-					</ul>
-				</div>
-			</section>
+			<!-- Footer -->
+			{{> footer}}
 			<hr>
 		</div>
 	</div>
 </div>
 <!-- Scripts -->
-			<script src="images/js/jquery.min.js"></script>
-			<script src="images/js/browser.min.js"></script>
-			<script src="images/js/breakpoints.min.js"></script>
-			<script src="images/js/util.js"></script>
-			<script src="images/js/main.js"></script>
+<script src="images/js/jquery.min.js"></script>
+<script src="images/js/browser.min.js"></script>
+<script src="images/js/breakpoints.min.js"></script>
+<script src="images/js/util.js"></script>
+<script src="images/js/main.js"></script>
 <script>
 	// Select all links with hashes
 	$('a[href*="#"]')

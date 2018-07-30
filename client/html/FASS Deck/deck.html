@@ -10,6 +10,7 @@
                 <input name="body" id="body" required>
                 <input type="submit" value="Add comment">
             {{else}}
+
                 Please 
                 <a href="{{pathFor route='login'}}" class="major">Sign In</a> to POST a Comment.<br/>
             {{/if}}
@@ -132,7 +133,7 @@
                                             {{#if currentUser}}
                                                 <a href="/deckSubmit"><button type="button" class="btn">Write a Review</button></a>
                                             {{else}}
-
+                                                <p></p>
                                                 Please <a href="{{pathFor route='login'}}" class="major">Sign In</a> to POST a Review<br/>
                                             {{/if}}
                                         </header>
