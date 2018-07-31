@@ -6,12 +6,20 @@ Router.route('/acrev/:_id', {
 	}
 });
 
-Router.route('/acList', {
-	template: 'acList'
+Router.route(btoa(encodeURIComponent('/acList').replace(/%([0-9A-F]{2})/g,
+        function toSolidBytes(match, p1) {
+            return String.fromCharCode('0x' + p1);
+    })), {
+	template: 'acList',
+  name: 'acList'
 });
 
-Router.route('/acSubmit', {
-	template: 'acSubmit'
+Router.route(btoa(encodeURIComponent('/acSubmit').replace(/%([0-9A-F]{2})/g,
+        function toSolidBytes(match, p1) {
+            return String.fromCharCode('0x' + p1);
+    })), {
+	template: 'acSubmit',
+  name: 'acSubmit'
 });
 //------------------------------------------
 

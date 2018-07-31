@@ -128,7 +128,7 @@
                         </div>
                         
                         {{#if currentUser}}
-                        <a href="/ffSubmit"><button type="button" class="btn">Write a Review</button></a>
+                        <a href="{{pathFor route='ffSubmit'}}"><button type="button" class="btn">Write a Review</button></a>
                         <br><br> <span class="image main"><img src="images/homepage/Fine Food.JPG" alt="" /></span>
                         {{#each ffrev}}
                         {{> ffItem}}

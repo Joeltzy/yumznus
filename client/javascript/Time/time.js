@@ -16,3 +16,7 @@ Template.home.helpers({
 Template.registerHelper('formatDate', function(date) {
   return moment(date).format('MMMM Do, YYYY [at] hh:mm a');
 });
+
+Template.registerHelper('formatDateMain', function(date) {
+  return moment(date).format('MMMM Do, YYYY [at] hh:mm:ss a');
+});

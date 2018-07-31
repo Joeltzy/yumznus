@@ -6,12 +6,20 @@ Router.route('/frrev/:_id', {
 	}
 });
 
-Router.route('/frList', {
-	template: 'frList'
+Router.route(btoa(encodeURIComponent('/frList')).replace(/%([0-9A-F]{2})/g,
+        function toSolidBytes(match, p1) {
+            return String.fromCharCode('0x' + p1);
+    }), {
+	template: 'frList',
+  name: 'frList'
 });
 
-Router.route('/frSubmit', {
-	template: 'frSubmit'
+Router.route(btoa(encodeURIComponent('/frSubmit')).replace(/%([0-9A-F]{2})/g,
+        function toSolidBytes(match, p1) {
+            return String.fromCharCode('0x' + p1);
+    }), {
+	template: 'frSubmit',
+  name: 'frSubmit'
 });
 //------------------------------------------
 

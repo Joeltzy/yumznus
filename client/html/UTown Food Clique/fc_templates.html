@@ -113,7 +113,7 @@
 							{{> fcdes}}
 						</div>
 						{{#if currentUser}}
-						<a href="/fcSubmit"><button type="button" class="btn">Write a Review</button></a>
+						<a href="{{pathFor route='fcSubmit'}}"><button type="button" class="btn">Write a Review</button></a>
 						<br><br> <span class="image main"><img src="images/homepage/Food Clique.JPG" alt="" /></span>
 						{{#each fcrev}}
 						{{> fcItem}}

@@ -34,7 +34,7 @@ Template.login.events({
       Meteor.loginWithPassword(email, password, function(error){
         if (Meteor.user()) {
           alert("Hello " + username + ", you are now logged in!");
-          window.location.href = 'home';
+          window.location.href = '/';
         } else {
           alert(error.reason);
         }

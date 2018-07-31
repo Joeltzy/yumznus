@@ -7,12 +7,20 @@ Router.route('/ffrev/:_id', {
   }
 });
 
-Router.route('/ffList', {
-  template: 'ffList'
+Router.route(btoa(encodeURIComponent('/ffList')).replace(/%([0-9A-F]{2})/g,
+        function toSolidBytes(match, p1) {
+            return String.fromCharCode('0x' + p1);
+    }), {
+  template: 'ffList',
+  name: 'ffList'
 });
 
-Router.route('/ffSubmit', {
-  template: 'ffSubmit'
+Router.route(btoa(encodeURIComponent('/ffSubmit')).replace(/%([0-9A-F]{2})/g,
+        function toSolidBytes(match, p1) {
+            return String.fromCharCode('0x' + p1);
+    }), {
+  template: 'ffSubmit',
+  name: 'ffSubmit'
 });
 //------------------------------------------
 

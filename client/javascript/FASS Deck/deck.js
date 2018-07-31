@@ -6,12 +6,20 @@ Router.route('/deckrev/:_id', {
 	}
 });
 
-Router.route('/deckList', {
-	template: 'deckList'
+Router.route(btoa(encodeURIComponent('/deckList').replace(/%([0-9A-F]{2})/g,
+        function toSolidBytes(match, p1) {
+            return String.fromCharCode('0x' + p1);
+    })), {
+	template: 'deckList',
+  name: 'deckList'
 });
 
-Router.route('/deckSubmit', {
-	template: 'deckSubmit'
+Router.route(btoa(encodeURIComponent('/deckSubmit').replace(/%([0-9A-F]{2})/g,
+        function toSolidBytes(match, p1) {
+            return String.fromCharCode('0x' + p1);
+    })), {
+	template: 'deckSubmit',
+  name: 'deckSubmit'
 });
 //------------------------------------------
 

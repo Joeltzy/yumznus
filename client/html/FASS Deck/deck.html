@@ -130,7 +130,7 @@
                         </div>
                         
                         {{#if currentUser}}
-                        <a href="/deckSubmit"><button type="button" class="btn">Write a Review</button></a>
+                        <a href="{{pathFor route='deckSubmit'}}"><button type="button" class="btn">Write a Review</button></a>
                         <br><br> <span class="image main"><img src="/images/homepage/The Deck.jpg" alt="" /></span>
                         {{#each deckrev}}
                         {{> deckItem}}

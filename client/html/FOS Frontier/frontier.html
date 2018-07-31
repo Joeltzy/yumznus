@@ -130,7 +130,7 @@
                         </div>
                         
                         {{#if currentUser}}
-                        <a href="/frSubmit"><button type="button" class="btn">Write a Review</button></a>
+                        <a href="{{pathFor route='frSubmit'}}"><button type="button" class="btn">Write a Review</button></a>
                         <br><br> <span class="image main"><img src="images/homepage/Frontier.JPG" alt="" /></span>
                         {{#each frrev}}
                         {{> frItem}}

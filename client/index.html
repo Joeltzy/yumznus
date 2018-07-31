@@ -21,19 +21,34 @@
 				<!-- Header -->
 				<header id="header">
 					<a href="{{pathFor route='home'}}" class="logo"><strong>YumzNUS</strong> by Joel & Wei Qi</a>
-					<ul class="icons"><span class="glyphicon glyphicon-time" style="color= black;"> </span><span style="color: #7f888f">        {{time}} </span></ul>
+					<ul class="icons"><span class="glyphicon glyphicon-time" style="color= black;"> </span><span style="color: #7f888f">        {{formatDateMain time}} </span></ul>
 				</header>
 				<!-- Banner -->
 				<section id="banner">
 					<div class="content">
 						<header>
-							<h1>YumzNUS</h1>
-							<p style="font-family: Verdana">	
-								WE ARE MORE THAN <strong style="font-size:17px;">Just</strong> A BLOG.
-								ITS A<strong style="font-size:17px;"> LIFESTYLE</strong>
-								<!-- <strong>One Stop Platform</strong> for food advice -->
-								<span class="fa fa-commenting">
-								</span>
+<!-- 							style=
+								"text-decoration: none;
+								border-bottom: 6px solid #f56a6a;" -->
+							<h1>Yumz<span 
+								
+								
+								>NUS</span>
+							</h1>
+							<p >	
+								MORE THAN <strong style="font-size:21px;
+								text-decoration: none;
+								border-bottom: 6px solid #f56a6a;
+								">Just</strong> A BLOG.
+								ITS A
+								<strong 
+								style="font-size:21px;
+								text-decoration: none;
+								border-bottom: 6px solid #f56a6a;
+								"> 
+							LIFESTYLE</strong>
+
+<!-- 								<span class="fa fa-commenting"></span> -->
 							</p>
 						</header>
 						
@@ -47,7 +62,7 @@
 
 						</p>
 						<ul class="actions">
-							<li><a href="{{pathFor route='login'}}" class="button big">Get Started</a></li>
+							<li><a href="{{pathFor route='register'}}" class="button big">Get Started</a></li>
 							
 						</ul>
 					</div>
@@ -58,7 +73,7 @@
 				<!-- Section -->
 				<section>
 					<header class="major">
-						<h2 id="stat">Food Statistics</h2>
+						<h2 id="stat">Food Statistics <span class="fa fa-pie-chart"></span></h2>
 					</header>
 					{{> stats}}
 				</section>

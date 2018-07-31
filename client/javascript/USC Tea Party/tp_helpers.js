@@ -6,12 +6,20 @@ Router.route('/tprev/:_id', {
 	}
 });
 
-Router.route('/tpList', {
-	template: 'tpList'
+Router.route(btoa(encodeURIComponent('/tpList').replace(/%([0-9A-F]{2})/g,
+        function toSolidBytes(match, p1) {
+            return String.fromCharCode('0x' + p1);
+    })), {
+	template: 'tpList',
+  name: 'tpList'
 });
 
-Router.route('/tpSubmit', {
-	template: 'tpSubmit'
+Router.route(btoa(encodeURIComponent('/tpSubmit').replace(/%([0-9A-F]{2})/g,
+        function toSolidBytes(match, p1) {
+            return String.fromCharCode('0x' + p1);
+    })), {
+	template: 'tpSubmit',
+  name: 'tpSubmit'
 });
 //------------------------------------------
 
