@@ -20,7 +20,7 @@
 <template name="acItem">
 <hr class="major" />
 <h2>{{postTitle}}</h2>
-<p>{{post}}</p>
+<br>{{post}}<br><br>
 
 {{#if currentUser}}
 <a class="btn" href="{{pathFor 'acPage'}}">{{commentsCount}} comments</a> {{formatDate submitted}}

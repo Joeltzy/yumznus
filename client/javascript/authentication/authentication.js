@@ -46,7 +46,8 @@ Template.signout.events({
   'click .logout': function(event){
       event.preventDefault();
       Meteor.logout();
-      alert("You have successfully logged out.")
+      alert("You have successfully logged out.");
+      window.location.href = '/';
 
   }
 });

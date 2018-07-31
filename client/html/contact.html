@@ -41,19 +41,20 @@
 							<label for="demo-priority-high">High</label>
 						</div>
 						<div class="col-4 col-12-small">
-							<input type="radio" id="demo-priority-high" name="demo-priority">
-							<label for="demo-priority-high">Code Red</label>
+							<input type="radio" id="demo-priority-red" name="demo-priority">
+							<label for="demo-priority-red">Code Red</label>
 						</div>
 						<!-- Break -->
 						<br>
 						<strong>Bot Check</strong> - Please Bear with us:<br><br>
 						<div class="col-6 col-12-small">
-							<input type="checkbox" id="demo-human" name="demo-human">
+							<input type="radio" id="demo-human" name="demo-human">
 							<label for="demo-human">I am a human</label>
 						</div>
+
 						<div class="col-6 col-12-small">
-							<input type="checkbox" id="demo-human" name="demo-human" checked>
-							<label for="demo-human">I am NOT a human</label>
+							<input type="radio" id="demo-nothuman" name="demo-human" checked="">
+							<label for="demo-nothuman">I am a NOT human</label>
 						</div>
 						<br>
 						<!-- Break -->
@@ -66,7 +67,7 @@
 								<li><input type="submit" value="Send Message" class="primary" onclick="myFunction()"/></li>
 								<script>
 								function myFunction() {
-								alert("Response sent. Thank you!");
+								alert("Response sent. Expect a response within 3 working days. Thank you!");
 								window.location.href = '/';
 								}
 								</script>

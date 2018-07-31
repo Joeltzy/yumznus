@@ -18,7 +18,7 @@
 <template name="fcItem">
 <hr class="major" />
 <h2>{{postTitle}}</h2>
-<p>{{post}}</p>
+<br>{{post}}<br><br>
 {{#if currentUser}}
 <a class="btn" href="{{pathFor 'fcPage'}}">{{commentsCount}} comments</a> {{formatDate submitted}}
 <a class="btn pull-right btn-small no" ><i class="fa fa-chevron-down"></i></a>

@@ -20,7 +20,7 @@
 <template name="tpItem">
 <hr class="major" />
 <h2>{{postTitle}}</h2>
-<p>{{post}}</p>
+<br>{{post}}<br><br>
 
 {{#if currentUser}}
 <a class="btn" href="{{pathFor 'tpPage'}}">{{commentsCount}} comments</a> {{formatDate submitted}}
