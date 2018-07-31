@@ -26,7 +26,7 @@ div.a {
   }
   
   .empty-stars:before {
-    -webkit-text-stroke: 3px #f56a6a;
+    -webkit-text-stroke: 1px #f56a6a;
   }
   
   .full-stars:before {

@@ -19,7 +19,7 @@ Template.register.events({
         Meteor.logout();
         alert("Account Created. Please log in.");
 
-        window.location.href = 'login';
+        window.location.href = '/L0xvZ2luIHBhZ2U=';
       }
   }
 });
