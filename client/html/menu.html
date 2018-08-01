@@ -1,0 +1,32 @@
+<template name="menu">
+<nav id="menu">
+	<header class="major">
+		<h2>Menu</h2>
+	</header>
+	<ul>
+		<li><a href="{{pathFor route='home'}}">Homepage</a></li>
+		{{#if currentUser}}
+		<li>{{> signout}}</li>
+		{{else}}
+		<li><a href="{{pathFor route='login'}}">Login/Sign Up </a>
+		
+	</li>
+	{{/if}}
+	<li><a href="{{pathFor route='vote_list'}}">Vote a Stall </a></li>
+	<li><a href="#utown">University Town</a></li>
+	<li>
+		<a href="#fos">Faculty of Science</a>
+	</li>
+	<li>
+		<a href="#usc">Unviersity Sports Centre</a>
+	</li>
+	<li>
+		<a href="#fass">Faculty of Arts</a>
+	</li>
+	<li>
+		{{> contact}}
+	</li>
+</ul>
+
+</nav>
+</template>

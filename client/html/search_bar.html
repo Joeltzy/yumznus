@@ -1,0 +1,30 @@
+<template name="searchbar">
+
+		<form target="_blank" action="https://google.com/search" id="myform" name="form">
+		<div class="input-group">
+			<input type="text" name="query" id="query" placeholder="Search" class="form-control width100"/>
+			<div class="input-group-btn">
+				<button id="hello" 
+				style="
+				height:38px;
+				text-align: center;
+				cursor: pointer;
+				font-size: 16px;
+				 " 
+				 class="btn" type="submit"><i class="fa fa-search"></i></button>
+			</div>
+		</div>
+	</form>
+		<script type="text/javascript">
+		document.getElementById("myform").reset();
+	</script>
+<!-- <section id="search" class="alt">
+
+	 	<form target="_blank" action="https://google.com/search" id="form">
+			<input type="text" name="query" id="query" placeholder="Search" />
+			<input type="submit" name="">
+	</form>
+	
+	
+</section> -->
+</template>

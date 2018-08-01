@@ -29,12 +29,9 @@
 							<!-- 							style=
 							"text-decoration: none;
 							border-bottom: 6px solid #f56a6a;" -->
-							<h1>Yumz<span
-								
-								
-							>NUS</span>
+							<h1>Yumz<span>NUS</span>
 							</h1>
-							<p >
+							<p>
 								MORE THAN <strong style="font-size:21px;
 								text-decoration: none;
 								border-bottom: 6px solid #f56a6a;
@@ -66,72 +63,38 @@
 					<span class="image object">
 						<img src="images/top photo.jpg" alt="NUS campus" />
 					</span>
+
 				</section>
-				<!-- Section -->
+				<!-- STATS Section -->
 				<section>
-					<header class="major">
-						<h2 id="stat">Food Statistics <span class="fa fa-pie-chart"></span></h2>
-					</header>
 					{{> stats}}
 				</section>
 				<!-- Section -->
 				<section>
-					<header class="major">
-						<h2 id="Recommended">Recommends <span class="glyphicon glyphicon-thumbs-up"></span></h2>
-					</header>
-					<div class="features">
-						{{> recommended}}
-					</div>
+					{{> recommended}}
 				</section>
 				<!-- foodstalls -->
-				{{> foodstalls}}
+				<section>
+					{{> foodstalls}}
+				</section>
 			</div>
 		</div>
+
 		<!-- Sidebar -->
 		<div id="sidebar" class="active">
 			<div class="inner">
 				<!-- Search -->
-				<section id="search" class="alt">
-					<form method="post" action="#">
-						<input type="text" name="query" id="query" placeholder="Search" />
-					</form>
-				</section>
+				{{> searchbar}}
+
 				<!-- Menu -->
-				<nav id="menu">
-					<header class="major">
-						<h2>Menu</h2>
-					</header>
-					<ul>
-						<li><a href="{{pathFor route='home'}}">Homepage</a></li>
-						{{#if currentUser}}
-						<li>{{> signout}}</li>
-						{{else}}
-						<li><a href="{{pathFor route='login'}}">Login/Sign Up </a>
-						
-					</li>
-					{{/if}}
-					<li><a href="{{pathFor route='vote_list'}}">Vote a Stall </a></li>
-					<li><a href="#utown">University Town</a></li>
-					<li>
-						<a href="#fos">Faculty of Science</a>
-					</li>
-					<li>
-						<a href="#usc">Unviersity Sports Centre</a>
-					</li>
-					<li>
-						<a href="#fass">Faculty of Arts</a>
-					</li>
-					<li>
-						{{> contact}}
-					</li>
-				</ul>
-				
-			</nav>
+				{{> menu}}
 			<!-- Footer -->
 			{{> footer}}
 			<hr>
 		</div>
 	</div>
+
+
 </div>
 <!-- Scripts -->
 <script src="images/js/jquery.min.js"></script>

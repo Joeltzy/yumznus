@@ -1,39 +1,42 @@
 <template name="stats">
 
-<div class="index-content">
-    <div class="container">
-        <a href="#">
-            <div class="col-lg-4">
-                <div class="card">
-
-                    <img src="images/stats1.jpg">
-                    <h4 style="font-size:20px;">Total Food Stalls</h4>
-                    <p id="s_count" style="font-size:50px;">{{stall_count}}</p>
-                    <br>
+    <header class="major">
+        <h2 id="stat">Food Statistics <span class="fa fa-pie-chart"></span></h2>
+    </header>
+    <div class="index-content">
+        <div class="container">
+            <a href="#">
+                <div class="col-lg-4">
+                    <div class="card">
+                        <img src="images/stats1.jpg">
+                        <h4 style="font-size:20px;">Total Food Stalls</h4>
+                        <p id="s_count" style="font-size:50px;">{{stall_count}}</p>
+                        <br>
+                    </div>
                 </div>
-            </div>
-        </a>
-        <a href="#">
-            <div class="col-lg-4">
-                <div class="card">
-                    <img src="images/stats2.jpg">
-                    <h4 style="font-size:20px;">Total Votes </h4>
-                    <p id="v_count" style="font-size:50px;">{{total_count}}</p>
-                    <br>
-                    <!-- <a href="blog-ici.html" class="blue-button">Read More</a> -->
+            </a>
+            <a href="#">
+                <div class="col-lg-4">
+                    <div class="card">
+                        <img src="images/stats2.jpg">
+                        <h4 style="font-size:20px;">Total Votes </h4>
+                        <p id="v_count" style="font-size:50px;">{{total_count}}</p>
+                        <br>
+                        <!-- <a href="blog-ici.html" class="blue-button">Read More</a> -->
+                    </div>
                 </div>
-            </div>
-        </a>
-        <a href="#">
-            <div class="col-lg-4">
-                <div class="card">
-                    <img src="images/stats3.jpg">
-                    <h4 style="font-size:20px;">Total Reviews</h4>
-                    <p id="r_count" style="font-size:50px;">{{rev_count}}</p>
-                    <br>
+            </a>
+            <a href="#">
+                <div class="col-lg-4">
+                    <div class="card">
+                        <img src="images/stats3.jpg">
+                        <h4 style="font-size:20px;">Total Reviews</h4>
+                        <p id="r_count" style="font-size:50px;">{{rev_count}}</p>
+                        <br>
+                    </div>
                 </div>
-            </div>
-        </a>
+            </a>
+        </div>
     </div>
-</div>
+
 </template>
