@@ -11,7 +11,7 @@ Template.stats.helpers({
 
 var total_counter = arrSum(arrlist);
 $({countNum: $('#v_count').text()}).animate({countNum: total_counter}, {
-      duration: 1300, 
+      duration: 6000, 
       easing:'linear',
       step: function() {
         $('#v_count').text(Math.floor(this.countNum));
@@ -35,7 +35,7 @@ $({countNum: $('#v_count').text()}).animate({countNum: total_counter}, {
 var stall_counter = Votes.find().count();
 $({countNum: $('#tata').text()}).animate({countNum: stall_counter}, {
 
-      duration: 1300, 
+      duration: 6000, 
       easing:'linear',
       step: function() {
         $('#s_count').text(Math.floor(this.countNum));

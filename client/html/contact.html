@@ -1,28 +1,28 @@
 <template name="contact">
 <a href="#myModal"  data-toggle="modal">Contact Us</a>
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	<form>
+	<form class="contact_form">
 		<div class="container">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-body">
 						<div class="col-6 col-12-xsmall">
-							<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name"/>
+							<input type="text" name="username" id="username" value="" placeholder="Name" required="" />
 						</div>
 						<br>
 						<div class="col-6 col-12-xsmall">
-							<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
+							<input type="email" name="email" id="demo-email" value="" placeholder="Email" required="" />
 						</div>
 						<!-- Break -->
 						<br>
 						<div class="col-12">
-							<select name="demo-category" id="demo-category">
+							<select name="demo-category" id="demo-category" required="">
 								
 								<option value="">- Category -</option>
-								<option value="1">Suggestions for Improvement</option>
-								<option value="1">Bug Report</option>
-								<option value="1">Sponsorships</option>
-								<option value="1">Donations</option>
+								<option value="1">Improvements</option>
+								<option value="1">Bug Reports</option>
+								<option value="1">Sponsorships/Donations</option>
+								<option value="1">Others</option>
 							</select>
 						</div>
 						<!-- Break -->
@@ -46,39 +46,31 @@
 						</div>
 						<!-- Break -->
 						<br>
-						<strong>Bot Check</strong> - Please Bear with us:<br><br>
-						<div class="col-6 col-12-small">
-							<input type="radio" id="demo-human" name="demo-human">
-							<label for="demo-human">I am a human</label>
+						<strong>Bot Check</strong> - Enter the Verification Code you see below:<br>
+						<div class="col-4 col-12-xsmall">
+						<strong><input type="text" id="bot1st" value ="{{makeid}}" name="bot1st" readonly=""></strong>
+					</div>
+
+						<div class="col-4 col-12-xsmall">
+							<input type="text" name="botcheck" id="botcheck" placeholder="Verification Code" />
 						</div>
 
-						<div class="col-6 col-12-small">
-							<input type="radio" id="demo-nothuman" name="demo-human" checked="">
-							<label for="demo-nothuman">I am a NOT human</label>
-						</div>
 						<br>
 						<!-- Break -->
-						<div class="col-12">
-							<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="5"></textarea>
+						<div class="col-12"> 
+							<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="4" required></textarea>
 						</div>
 						<!-- Break -->
+						<br>
 						<div class="col-12">
 							<ul class="actions">
-								<li><input type="submit" value="Send Message" class="primary" onclick="myFunction()"/></li>
-								<script>
-								function myFunction() {
-								alert("Response sent. Expect a response within 3 working days. Thank you!");
-								window.location.href = '/';
-								}
-								</script>
+								<li><input type="submit" value="Send Message" class="primary" /></li>
+
 								<li><input type="reset" data-dismiss="modal" value="Cancel" /></li>
 							</ul>
 						</div>
 					</div>
-					<!--         <div class="modal-footer">
-							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-							<button type="button" class="btn btn-default">Save changes</button>
-					</div> -->
+
 					</div><!-- /.modal-content -->
 					</div><!-- /.modal-dialog -->
 					</div><!-- /.modal -->
