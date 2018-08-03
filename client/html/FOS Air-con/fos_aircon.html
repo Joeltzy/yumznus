@@ -1,7 +1,6 @@
 <template name="accommentItem">
 {{body}}
 </template>
-
 <template name="accommentSubmit">
 {{> scrollup}}
 {{> scrolldown}}
@@ -16,12 +15,10 @@
 </form>
 <a href="{{pathFor route='acList'}}"><button type="button" class="btn">Back</button></a>
 </template>
-
 <template name="acItem">
 <hr class="major" />
 <h2>{{postTitle}}</h2>
 <br>{{post}}<br><br>
-
 {{#if currentUser}}
 <a class="btn" href="{{pathFor 'acPage'}}">{{commentsCount}} comments</a> {{formatDate submitted}}
 <a class="btn pull-right btn-small no" ><i class="fa fa-chevron-down"></i></a>
@@ -33,9 +30,7 @@
 <a class="btn pull-right"> {{score}} </a>
 <a class="btn pull-right btn-small" href="{{pathFor 'accounts'}}"><i class="fa fa-chevron-up"></i></a>
 {{/if}}
-
 </template>
-
 <template name = "acPage">
 <div class="container">
     {{> acItem}}
@@ -52,9 +47,6 @@
     {{> accommentSubmit}}
 </div>
 </template>
-
-
-
 <template name="acSubmit">
 {{> scrollup}}
 {{> scrolldown}}
@@ -97,9 +89,6 @@
     </div>
 </div>
 </template>
-
-
-
 <template name="acList">
 {{> scrollup}}
 {{> scrolldown}}
@@ -155,11 +144,21 @@
                 
             </div>
         </div>
+        <div id="sidebar" class="active">
+            <div class="inner">
+                <!-- Search -->
+                {{> searchbar}}
+                <!-- Menu -->
+                {{> menu}}
+                <!-- Footer -->
+                {{> footer}}
+                <hr>
+            </div>
+        </div>
     </div>
     
 </div>
 </template>
-
 <template name="acdes">
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d660.1901403621963!2d103.77949331296568!3d1.2967985863061404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da1a57206b0e1b%3A0x668553378f33753!2sNUS+Temporary+Science+Canteen!5e0!3m2!1sen!2ssg!4v1531373112036" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 </template>

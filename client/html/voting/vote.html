@@ -1,6 +1,4 @@
 <template name="vote_list">
-
-
 {{> scrollup}}
 {{> scrolldown}}
 <div class="is-preload">
@@ -112,11 +110,11 @@
 						</table>
 					</div>
 					{{else}}
-					<span style="color: black; font-size:16px;">			
+					<span style="color: black; font-size:16px;">
 						To continue Viewing and Voting our Food Stalls,
 						You will have to sign in!
 						<br><br>
-						Click <strong><a href="{{pathFor route='login'}}">LOGIN</a></strong> to Sign In if you are an existing user 
+						Click <strong><a href="{{pathFor route='login'}}">LOGIN</a></strong> to Sign In if you are an existing user
 						<u>OR</u>
 						<br>
 						Click <strong><a href="{{pathFor route='register'}}">REGISTER</a></strong> to Register for a free account!
@@ -124,6 +122,7 @@
 						Thank you for using our services!
 					</span>
 					{{/if}}
+
 				</header>
 				
 				
@@ -132,12 +131,20 @@
 		</div>
 
 	</div>
-
+			<div id="sidebar" class="active">
+			<div class="inner">
+				<!-- Search -->
+				{{> searchbar}}
+				<!-- Menu -->
+				{{> menu}}
+				<!-- Footer -->
+				{{> footer}}
+				<hr>
+			</div>
+		</div>
 </div>
 <!-- Scripts -->
 </div>
-
-
 </template>
 <template name="vote_item">
 <div class="panel panel-default">
@@ -182,8 +189,8 @@
 <!-- <div class="container">
 	<div class="progress" style="height: 20px;background-color: rgba(255,0,0,0.1);">
 							<div class="progress-bar progress-bar-danger" role="progressbar"
-																aria-valuemin="0" aria-valuemax="100" style="width:{{percen}}%">
-																	{{percen}}%
+																	aria-valuemin="0" aria-valuemax="100" style="width:{{percen}}%">
+																		{{percen}}%
 							</div>
 	</div>
 </div> -->
