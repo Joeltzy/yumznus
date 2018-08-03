@@ -13,21 +13,48 @@
 	</li>
 	{{/if}}
 	<li><a href="{{pathFor route='vote_list'}}">Vote a Stall </a></li>
-	<li><a href="#utown">University Town</a></li>
+	<li><a href="#utown" onclick="check_utown()">University Town</a></li>
+	<script type="text/javascript">
+		function check_utown() {
+			if (window.location["pathname"] != "/") {
+				window.location.href = '/#utown';
+			}
+		}
+	</script>
 	<li>
-		<a href="#fos">Faculty of Science</a>
+		<a href="#fos" onclick="check_fos()">Faculty of Science</a>
+		<script type="text/javascript">
+		function check_fos() {
+		if (window.location["pathname"] != "/") {
+			window.location.href = '/#fos';
+		}
+		}
+		</script>
 	</li>
 	<li>
-		<a href="#usc">Unviersity Sports Centre</a>
+		<a href="#usc" onclick="check_usc()">Unviersity Sports Centre</a>
+		<script type="text/javascript">
+	function check_usc() {
+		if (window.location["pathname"] != "/") {
+			window.location.href = '/#usc';
+		}
+	}
+</script>
 	</li>
 	<li>
-		<a href="#fass">Faculty of Arts</a>
+		<a href="#fass" onclick="check_fass()">Faculty of Arts</a>
+		<script type="text/javascript">
+	function check_fass() {
+		if (window.location["pathname"] != "/") {
+			window.location.href = '/#fass';
+		}
+	}
+</script>
 	</li>
 	<li>
 		{{> contact}}
 	</li>
 	
 </ul>
-
 </nav>
 </template>

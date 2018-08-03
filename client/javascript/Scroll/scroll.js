@@ -27,7 +27,7 @@ Template.scrollup.events({
 Template.scrolldown.events({
     'click': function() {
         $('html, body').animate({
-        scrollTop : 10000                    // Scroll to top of body
+        scrollTop : 10000                    // Scroll to down of body
     }, 1500);
 
     }
