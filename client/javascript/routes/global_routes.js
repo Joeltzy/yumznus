@@ -1,10 +1,3 @@
-
-// Router.route(encodeURIComponent('/home page'), {
-//   template: 'home',
-//   name: 'home'
-// });
-
-
 Router.route(btoa(encodeURIComponent('/register page').replace(/%([0-9A-F]{2})/g,
         function toSolidBytes(match, p1) {
             return String.fromCharCode('0x' + p1);
