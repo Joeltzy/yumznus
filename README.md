@@ -1,5 +1,5 @@
 # Project Summary
-This project contains a submission for the NUS Orbital CP2106 project. YumzNUS is a all in one platform for users to check out the most efficient places to dine on NUS campus. It incudes a review/comments section and also a voting/recommended section for users to be well-informed of the best dining places. The link for the website can be found at this [link](https://yumznus18.herokuapp.com/). The website is deployed on Heroku App Services. 
+This project contains a submission for the NUS Orbital CP2106 project. YumzNUS is a all in one platform for users to check out the most efficient places to dine on NUS campus. It incudes a review/comments section and also a voting/recommended section for users to be well-informed of the best dining places. The link for the website can be found [here](https://yumznus18.herokuapp.com/). The website is deployed on Heroku App Services. 
 
 ## Built With
 YumzNUS was built using MeteorJS. Meteor, or MeteorJS, is a free and open-source isomorphic JavaScript web framework written using Node.js. Meteor allows for rapid prototyping and produces cross-platform code. The database used at the back-end is MongoDB. MongoDB is a cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with schema.  
